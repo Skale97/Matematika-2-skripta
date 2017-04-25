@@ -1,0 +1,42 @@
+\documentclass[a4paper, titlepage, 10pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[serbian]{babel}
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{tabu}
+\usepackage{centernot}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\author{Marko Skakun}
+\title{\textbf{\LARGE MATEMATIKA 2} \\ \normalsize \textit{Skripta}}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Posledica}[theorem]
+\newtheorem{definition}{Definicija}
+\newtheorem{example}{Primer}
+\newcommand{\card}{\ensuremath{{\rm card\ }}}
+
+\everymath{\displaystyle}
+
+%Resetovanje brojača teorema po poglavlju%
+\makeatletter
+\@addtoreset{theorem}{section}
+\@addtoreset{definition}{section}
+\@addtoreset{definition}{section}
+\@addtoreset{example}{section}
+\makeatother
+
+\begin{document}
+	\maketitle
+	\textit{Napomena:} u slučaju da pronađete neku grešku, ili imate neku preporuku pošaljite je na mail: skalesms@gmail.com
+	\newpage
+	\tableofcontents
+	\newpage
+	\input{Poglavlja/NeodredeniIntegrali}
+	\input{Poglavlja/OdredeniIntegrali}
+	\input{Poglavlja/DiferencijalneJednacine}
+	\input{Poglavlja/Kombinatorika}
+\end{document}

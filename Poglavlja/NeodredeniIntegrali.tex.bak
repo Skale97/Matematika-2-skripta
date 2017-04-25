@@ -1,0 +1,374 @@
+
+\section{Neodređeni integrali} 
+\subsection{Uvod} 
+
+%Primitivna funkcija
+\begin{definition}
+	Neka je funkcija $f$ definisana na proizvoljnom intervalu $I = (a, b) \quad a,b\in \overline{\mathbb{R}}$. Ako postoji funkcija $F(x)$ koja je definisana na $I$ i za koju važi $$(\forall x \in I)\; F'(x) = f(x)$$ tada kažemo da je $F(x)$ \textbf{primitivna funkcija} funkcije $f(x)$ na intervalu $I$.
+\end{definition}
+
+\begin{theorem}
+	Ako je $F(x)$ primitivna funkcija funkcije $f$ na intervalu $I$, tada je i $F(x)+c; \quad c \in \mathbb{R}$ takođe primitivna funkcija funkcije $f$ na intervalu $I$.
+\end{theorem}
+
+\begin{proof}
+	$$(\forall x \in I)(F(x)+c)' = F'(x) = f(x)$$
+\end{proof}
+
+\begin{theorem}
+	Ako su $F_{1}(x)$ i $F_{2}(x)$ neke dve primitivne funkcije funkcije $f$ na intervalu $I$, tada:
+	$$(\exists c \in \mathbb{R})(\forall x \in I)\;F_{1}(x)-F_{2}(x) = c$$
+\end{theorem}
+
+\begin{proof}
+	\begin{align*}
+		&\varphi (x) = F_{1}(x) - F_{2}(x)\\
+		&\varphi'(x) = F_{1}'(x) - F_{2}'(x) = f(x)-f(x) = 0\\
+		&(\forall x \in \mathbb{R}) \;\varphi'(x) = 0 \implies \varphi(x) = c\
+	\end{align*}
+	* Teorema iz diferencijalnog računa $(\exists c \in \mathbb{R})(\varphi(x) = c) $
+\end{proof}
+
+\begin{theorem}
+	Ako je funkcija neprekidna na intervalu $I$ tada ona ima primitivnu funkciju na intervalu $I$.\\
+\end{theorem}
+
+%Neodređeni integral
+\begin{definition}
+	Skup svih primitivnih funkcija funkcije $f$ na intervalu $I$ naziva se \textbf{neodređeni integral} funkcije $f$ na intervalu $I$.\\
+	Oznaka:
+	$$ \int f(x) \, \mathrm{d}x; \quad \int f(x)\, \mathrm{d}x= \{F(x)+c\;|\;c\in\mathbb{R}\}$$
+	Po dogovoru: $\int f(x)\, \mathrm{d}x = F(x)+c; \quad c \in \mathbb{R}$ 
+\end{definition}
+
+\begin{theorem}
+	Neka funkcije $f$ i $g$ imaju primitivne funkcije na intervalu $I$, i neka je\\ $\int f(x)\, \mathrm{d}x = F(x) + c; \quad c \in \mathbb{R}$, tada važi:
+	\begin{enumerate}
+		\item $\mathrm{d}\left(\int f(x)\, \mathrm{d}x\right) = f(x)dx$
+		\item $\left(\int f(x)\, \mathrm{d}x\right)'= \frac{d\left(\int f(x)\, \mathrm{d}x\right)}{dx} = f(x)$
+		\item $\int \mathrm{d}F(x) = F(x) + c$
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}
+		\item $d\left(\int f(x)\, \mathrm{d}x \right) = d(F(x) + c) = dF(x) = F'(x)dx = f(x)dx$
+		\item $\left(\int f(x)\, \mathrm{d}x\right)' = f(x)$
+		\item $\int \mathrm{d}F(x) = \int F'(x)\, \mathrm{d}x = \int f(x) \, \mathrm{d}x = F(x) + c$
+	\end{enumerate}
+\end{proof}
+
+
+\subsection{Osnovni metodi integracije}
+
+\subsubsection{Tablica}
+	Tablica neodređenih integrala
+	\begin{enumerate}[label = \arabic*)]
+		\item $\int x^n\, \mathrm{d}x = \frac{x^{n+1}}{n+1}+c; \quad n \centernot = -1$
+		\item $\int \frac{1}{x}\, \mathrm{d}x = \ln |x| + c; \quad x \centernot = 0$
+		\item $\int a^x \, \mathrm{d}x = \frac{a^x}{\ln a} + c; \quad a>0, a \centernot = 1$
+		\item $\int e^x \, \mathrm{d}x = e^x + c$
+		\item $\int \frac{\mathrm{d}x}{1+x^2} = \arctg x + c = - \arcctg x + c_1$
+		\item $\int \frac{\mathrm{d}x}{\sqrt{1 - x^2}} = \arcsin x + c = - \arccos x + c_1; \quad (|x| < 1)$
+		\item $\int \frac{\mathrm{d}x}{\sqrt{x^2 \pm 1}} = \ln |x+\sqrt{x^2 \pm 1}| + c = 
+		\begin{cases}
+			\arsh x + c \quad za \; +\\
+			\arch x + c \quad za - i \; x > 1
+		\end{cases}$
+		\item $\int \frac{\, \mathrm{d}x}{1-x^2} = \frac{1}{2}\ln \left | \frac{1 + x}{1 - x} \right | + c = 
+		\begin{cases}
+			\arth x + c &\quad za |x|<1\\
+			\arcth x + c &\quad za |x|> 1
+		\end{cases}$
+		\item $\int \sin x \, \mathrm{d}x = - \cos x + c$
+		\item $\int \cos x \, \mathrm{d}x = \sin x + c$
+		\item $\int \frac{\mathrm{d}x}{\cos^2 x} = \tg x + c$
+		\item $\int \frac{\mathrm{d}x}{\sin^2 x} = - \ctg x + c$
+		\item $\int \sh x \, \mathrm{d}x = \ch x + c$
+		\item $\int \ch x \, \mathrm{d}x = \sh x + c$
+		\item $\int \frac{\mathrm{d}x}{\ch^2 x} \th x + c$
+		\item $\int \frac{\mathrm{d}x}{\sh^2 x} = -\cth x + c$
+	\end{enumerate}
+	Smenom izvedeni neodređeni integrali
+	\begin{enumerate}[label = \arabic*)]
+		\item $\int \frac{\mathrm{d}x}{\sqrt{x^2 \pm a}} = \ln |x + \sqrt{x^2 \pm a}| + c$
+		\item $\int \frac{\mathrm{d}x}{\sqrt{a^2 - x^2}} = \arcsin \frac{x}{a} + c$
+		\item $\int \frac{\mathrm{d}x}{x^2+a^2} = \frac{1}{a}\arctan\frac{x}{a} + c$
+		\item $\int \frac{\mathrm{d}x}{x^2-a^2} = \frac{1}{2a}\ln\left | \frac{x-a}{x+a} \right | + c$
+		\item $\int \frac{\mathrm{d}x}{a^2 - x^2} = \frac{1}{2a} \ln \left | \frac{a+x}{a-x} \right | + c$
+	\end{enumerate}
+	
+	
+	
+\subsubsection{Korišćenjem teoreme o linearnosti integrala}
+	\begin{theorem}
+		Ako funkcije $f$ i $g$ imaju primitivne funkcije na intervalu $I$, i ako su $\alpha, \beta \in \mathbb{R}$, tada važi sledeće (na intervalu $I$):
+		$$\int (\alpha f(x)+\beta g(x)) \, \mathrm{d}x = \alpha \int f(x)\, \mathrm{d}x + \beta \int g(x)\, \mathrm{d}x + c$$
+	\end{theorem}
+	\begin{proof}
+		\begin{align*}
+		(\forall x \in I) &\left(\int (\alpha f(x) + \beta g(x))\, \mathrm{d}x\right)'  = \alpha f(x) + \beta g(x) \\
+		(\forall x \in I) &\left(\alpha \int f(x)\, \mathrm{d}x + \beta \int g(x)\, \mathrm{d}x\right)' = \alpha\left(\int f(x)\, \mathrm{d}x\right)' + \beta \left(\int g(x)\, \mathrm{d}x\right)' = \alpha f(x) + \beta g(x)\\
+		\implies &\int (\alpha f(x)+\beta g(x)) \, \mathrm{d}x = \alpha \int f(x)\, \mathrm{d}x + \beta \int g(x)\, \mathrm{d}x + c\\
+		\end{align*}
+	\end{proof}
+	
+	
+\subsubsection{Metod smene promenljive}
+	\begin{theorem}
+		Neka je data funkcija $f$ koja je neprekidna na intervalu $I$ i neka za funkciju $\varphi : I_1 \to I$ (gde je $I_1$ interval) važi:
+		\begin{enumerate} 
+			\item $\varphi$ i $\varphi'$ neprekidne na intervalu $I_1$
+			\item $(\forall t \in I_1) \varphi' (t) \centernot = 0$
+			\item $\exists \varphi^{-1}$
+		\end{enumerate}		 
+	 	Tada je $\int f(x) \, \mathrm{d}x = \int f(\varphi (t)) \varphi'(t)\, \mathrm{d}t$, smena $x = \varphi(t); \; \mathrm{d}x = \varphi'(t)\mathrm{d}t$
+	\end{theorem}
+	\begin{proof}
+		$$\left(\int f(x)\, \mathrm{d}x \right)' = f(x) = L\\$$
+		\begin{multline*}
+			\left[
+			\begin{aligned}
+				x &= \varphi(t)\\
+				dx &= \varphi'(t)dt
+			\end{aligned}
+			\right] \quad
+			\left(\int f(\varphi (t))\varphi ' (t) \, \mathrm{d}t\right)'  
+			=\frac{d\left(\int f(\varphi (t))\varphi'(t)\, \mathrm{d}t\right)}{dx} = \\
+			=\frac{d\left(\int f(\varphi (t))\varphi'(t)\, \mathrm{d}t\right)}{dx}\frac{dx}{dt}\frac{dt}{dx} =
+			f(\varphi (t))\varphi'(t)\frac{1}{\varphi'(t)} = 
+			f(\varphi(t)) = f(x) = D\\
+		\end{multline*}
+		$$L = D$$
+	\end{proof}
+	
+	\begin{corollary}
+		\begin{enumerate}[label = \arabic*)]
+			\item 
+				Poznato je $\int f(x)\, \mathrm{d}x = F(x) + c$\\
+				Traži se $\int f(\varphi (t))\varphi'(t)\, \mathrm{d}t$\\
+				$x = \varphi(t)$\\
+				$\int f(\varphi(t))\varphi'(t)\, \mathrm{d}t = F(\varphi(t))+c$
+			\item 
+				Poznato je $\int f(\varphi(t))\varphi'(t)\, \mathrm{d}t = G(t) + c_1$\\			
+				Traži se $\int f(x)\, \mathrm{d}x$\\
+				$x = \varphi(t)$\\
+				$t = \varphi^{-1}(x)$\\
+				$\int f(x)\, \mathrm{d}x = G(\varphi^{-1}(x))+c_1$
+		\end{enumerate}
+	\end{corollary}
+	
+\subsubsection{Svođenje kvadratnog trinoma na kanonski oblik}
+	\begin{align*}
+		ax^2+bx+c = a\left(x^2+\frac{b}{a}x+\frac{c}{a}\right) &= a\left(x^2 + \frac{2b}{2a}x + \left(\frac{b}{2a}\right)^2 - \left(\frac{b}{2a}\right)^2 + \frac{c}{a}\right) =\\
+		&= a\left(\left(x+\frac{b}{2a}\right)^2-\frac{b^2}{4a^2}+\frac{c}{a}\right) =\\
+		&= a\left(\left(x+\frac{b}{2a}\right)^2 + \frac{4ac-b^2}{4a}\right)\\
+		\text{smena: } &x+\frac{b}{2a} = t
+	\end{align*}
+	Opšti slučaj:
+	\begin{enumerate}[label = \arabic*)]
+		\item $\int \frac{\mathrm{d}x}{ax^2+bx+c}$
+		\item $\int \frac{Mx+N}{ax^2+bx+c}\, \mathrm{d}x$
+		\item $\int \sqrt{ax^2+bx+c}\, \mathrm{d}x$
+		\item $\int \frac{\mathrm{d}x}{\sqrt{ax^2+bx+c}}$
+		\item $\int \frac{Mx+N}{\sqrt{ax^2+bx+c}}\, \mathrm{d}$
+	\end{enumerate}
+	
+	
+	
+\subsubsection{Parcijalna integracija}
+		\begin{theorem}
+			Neka su funkcije $u(x)$ i $v(x)$ diferencijabilne na intervalu $I$, tada važi:
+			$$\int u(x)\, \mathrm{d}v(x) = u(x)v(x)-\int v(x)\, \mathrm{d}u(x) + c$$
+		\end{theorem}
+		\begin{proof}
+			\begin{align*}
+				&\mathrm{d}(u(x)v(x))=\mathrm{d}u(x)v(x)+u(x)\mathrm{d}v(x) \\
+				&\int \, \mathrm{d}(u(x)v(x)) = \int \, \mathrm{d}u(x)v(x)+ \int u(x)\, \mathrm{d}v(x)\\
+				&u(x)v(x) - \int v(x)\, \mathrm{d}u(x) = \int u(x)\, \mathrm{d}v(x)
+			\end{align*}
+		\end{proof}
+		
+
+\subsubsection{Metod rekurentnih formula}
+	\begin{align*}
+		I(n) &= \int f(x, n)\, \mathrm{d}x\\
+		I(n-1) &= \int f(x, n-1)\, \mathrm{d}x\\
+		I(n-2) &= \int f(x, n-2)\, \mathrm{d}x\\
+	\end{align*}
+	\begin{example}
+		\begin{align*}
+			I(n) &= \int \frac{1}{(1+x^2)^n}\, \mathrm{d}x\\
+			n=1\; : \; I(n) &= \int \frac{1}{1+x^2}\, \mathrm{d}x = \arctg x + c\\
+			n=2\; : \; I(n) &= ?\\
+			n=3\; : \; I(n) &= ?\\
+			\\
+			I(n) &= \int \frac{1+x^2-x^2}{(1+x^2)^n}\, \mathrm{d}x =\\
+			&=\int \frac{1}{(1+x^2)^{n-1}}\mathrm{d}x-\int \frac{xx}{(1+x^2)^n}\, \mathrm{d}x =\\
+			&= \left[
+			\begin{aligned}
+				u(x) = x &\quad du = dx\\
+				dv(x) = \frac{x}{(1+x^2)^n}dx &\quad v = \int \frac{x}{(1+x^2)^n}\, \mathrm{d}x = \frac{1}{2(1-n)}\frac{1}{(1+x^2)^{n-1}}			
+			\end{aligned}
+			\right]=\\
+			&= \frac{-x}{(1+x^2)^{n-1}}\frac{1}{2(1-n)}+\frac{1}{2(1-n)}\underbrace{\int \frac{1}{(1+x^2)^{n-1}}\, \mathrm{d}x}_{I(n-1)} + \underbrace{\int \frac{1}{(1+x^2)^{n-1}}\, \mathrm{d}x}_{I(n-1)} =\\
+			I(n) &= I(n-1)\left( 1+\frac{1}{2(1-n)}\right) - \frac{x}{2(1-n)(1+x^2)^{n-1}}\\
+			n=1\; : \; I(1) &= \arctg x +c\\
+			n=2\; : \; I(2) &= \arctg x\left(1+\frac{1}{2(1-2)}\right)-\frac{x}{2(1-2)(1+x^2)^{1-2}} = \frac{-\arctg x}{2} + \frac{x(1+x^2)}{2} +c
+		\end{align*}
+	\end{example}
+
+
+\subsubsection{Metod neodređenih koeficijenata}
+	Koristi se kada možemo da pretpostavimo analitički oblik primitivne funkcije
+	\begin{example}
+		$$\left. \int x e^x\, \mathrm{d}x = (Ax+B)e^x+c \middle/ \frac{d}{dx} \right.$$
+		-Polinom prvog stepena sa neodređenim koeficijentima A i B
+		\begin{gather*}
+			xe^x = A e^x + (Ax+B)e^x\\
+			xe^x = (Ax+A+B)e^x\\
+			A=1 \; \wedge  \; A+B = 0\\
+			A=1 \; \wedge \; B=-A=-1\\
+			(A, B) = (1, -1) \implies \int xe^x \, \mathrm{d}x= (x-1)e^x +c
+		\end{gather*}
+	\end{example}
+	\begin{example}
+		\begin{gather*}
+			\left. \int x^2 e^x \, \mathrm{d}x = (Ax^2+Bx+C)e^x +c \middle/ \frac{d}{dx} \right.\\
+			x^2 e^x = (Ax^2+Bx+C+2Ax+B)e^x\\
+			x^2 e^x = (Ax^2+(2A+B)x+B+C)e^x\\
+			A = 1 \; \wedge \; 2A+B = 0 \; \wedge \;  B+C = 0\\
+			A = 1 \; \wedge \; B = -2A = -2 \; \wedge \; C = -B = 2\\
+			(A, B, C) = (1, -2, 2) \implies \int x^2 e^x \, \mathrm{d}x = (x^2-2x+2)e^x+c
+		\end{gather*}
+	\end{example}
+
+\subsection{Posebne metode integracije}
+
+\subsubsection{Integracija racionalnih funkcija}
+	$$\int R(x)\, \mathrm{d}x = ?\\$$
+	$R(x) = \frac{P_n (x)}{Q_m (x)}\quad dg P_n = n \geq dg Q_m = m \implies R(x)$ je \textbf{neprava} racionalna funkcija,\\
+	za $n<m \implies R(x)$ je \textbf{prava} racionalna funkcija.\\
+	Svaka neprava racionalna funkcija može da se prikaže kao zbir polinoma i prave racionalne funkcije:
+	\begin{gather*}
+		R(x) = T(x)+\frac{S_l(x)}{Q_m(x)}\quad dg S_l = l < dg Q_m = m\\
+		\int R(x)\, \mathrm{d}x = \int T(x)\, \mathrm{d}x + \int \frac{S_l(x)}{Q_m(x)} \, \mathrm{d}x
+	\end{gather*}
+	\begin{theorem}
+		Svaka prava, nesvodljiva racionalna funkcija može se na jedinstven način razložiti na zbir parcijalnih razlomaka.
+		$$\frac{S_l(x)}{Q_m(x)} = \frac{1}{a_m}\left( \sum^k_{i=1} \sum^{r_i}_{j=1} \frac{A_{ij}}{(x-x_i)^j}+\sum^m_{i=1} \sum^{s_i}_{j=1} \frac{B_{ij}x+C_{ij}}{(x^2+p_ix+q_i)^j}\right)$$
+		gde je $Q_m (x)=a_m(x-x_1)^{r_1}(x-x_2)^{r_2}\ldots(x-x_k)^{r_k}(x^2+p_1x+q_1)^{s_1}(x^2+p_2x+q_2)^{s_2} \ldots (x^2+p_mx+q_m)^{s_m}$
+		-Opšti oblik parcijalnih razlomaka:
+		$$\frac{A}{(x-a)^k};\; \frac{Bx+C}{(x^2+px+q)^m};\; k,m \in \mathbb{N};\; p^2-4q<0$$
+	\end{theorem}
+	
+\subsubsection{Integracija nekih iracionalnih funkcija}
+	\begin{enumerate}[label = \textbf{\arabic*.)}]
+		\item 
+			$\int R\left(x, \left(\frac{ax+b}{cx+d}\right)^{\frac{p_1}{q_1}}, \left(\frac{ax+b}{cx+d}\right)^{\frac{p_2}{q_2}}, \ldots, \left(\frac{ax+b}{cx+d}\right)^{\frac{p_n}{q_n}}\right)\, \mathrm{d}x$
+			gde je $ad-bc \centernot = 0$\\
+			- Ovaj integral se svodi na integral racionalne funkcije smenom:
+			$$\frac{ax+b}{cx+d} = t^{NZS(q_1, q_2, \ldots, q_n)}$$
+		\item 
+			Ojlerove smene: $\int R\left(x, \sqrt{ax^2+bx+c}\right)\, \mathrm{d}x$
+			- Ovaj integral se svodi na integral racionalne funkcije smenom:
+			\begin{enumerate}[label=\Roman*]
+				\item
+					Ojlerova smena:
+					$$a>0 \implies \sqrt{ax^2+bx+c}=t\pm\sqrt{a}x$$
+				\item
+					Ojlerova smena:
+					$$c>0 \implies \sqrt{ax^2+bx+c}=xt\pm\sqrt{c}$$
+				\item
+					Ojlerova smena:
+					$$(x_1, x_2 \in \mathbb{R} \land x_1\centernot = x_2) \implies \sqrt{ax^2+bx+c} = t(x-x_1) \lor t(x-x_2)$$
+			\end{enumerate}
+			\textbf{Napomena:} Ojlerove smene treba izbegavati kada je god to moguće jer dovode do integrala racionalnih funkcija koji nisu baš zgodni za rešavanje
+		\item
+			Integracija binomnog diferencijala $\int x^m(a+bx^n)^p\, \mathrm{d}x$ \\ 
+			gde je $a, b\in \mathbb{R};\; m, n, p \in \mathbb{Q};\; m = \frac{m_1}{m_2};\; n = \frac{n_1}{n_2};\; p = \frac{p_1}{p_2}; \; ab \centernot = 0;\; np\centernot = 0$\\
+			- Rešenje se može predstaviti elementarnim funkcijama (i to svođenjem na integrale racionalnih funkcija) \textbf{samo} u sledećim slučajevima
+			\begin{enumerate}[label = \Roman*]
+				\item 
+					Ako je $p \in \mathbb{Z}$
+					\begin{enumerate}[label = \alph*)]
+						\item za $p>0$ razlaganje po binomnoj formuli svodi se na zbir tabličnih integrala
+						\item za $p<0$ koristi se smena $x = t^{NZS(m_2, n_2)}$
+					\end{enumerate}
+				\item
+					Ako je $\frac{m+1}{n}\in \mathbb{Z}$ koristi se smena  $a+bx^n=t^{p_2}$
+				\item
+					Ako je $\frac{m+1}{n}+p \in \mathbb{Z}$ koristi se smena $ax^{-n}+b=t^{p_2}$
+			\end{enumerate}
+		\item
+			U integrale koji sadrže $\sqrt{a^2-x^2}$, $\sqrt{x^2-a^2}$, $\sqrt{a^2+x^2}$ često je pogodno uvesti trigonometrijsku smenu:
+			\begin{enumerate}[label = \alph*)]
+				\item 
+					$\sqrt{a^2-x^2}$ uvodi se smena $x = a \sin t\quad dx = a \cos t dt \quad t = \arcsin \frac{x}{a}$
+				\item
+					$\sqrt{x^2+a^2}$ uvodi se smena $x = a \tg t \quad dx = \frac{a}{\cos^2 t}dt \quad t = \arctg \frac{x}{a}$
+				\item 
+					$\sqrt{x^2-a^2}$ uvodi se smena $x = \frac{a}{\cos t} \quad dx = \frac{a \sin t}{\cos^2 t}dt \quad t = \arccos \frac{a}{x}$
+			\end{enumerate}
+	\end{enumerate}
+
+	\textbf{Napomena:} \begin{gather*}
+		\int e^{-x^2}\, \mathrm{d}x; \; \int x^{2n}e^{\pm x^2}\, \mathrm{d}x; \; \int \cos (x^2) \, \mathrm{d}x; \; \int \sin(x^2) \, \mathrm{d}x \\
+ 		\int \frac{\sin x}{x^n} \, \mathrm{d}x; \; \int \frac{\cos x}{x^n}\, \mathrm{d}x;/; \int \frac{e^ax}{x^n}\, \mathrm{d}x ;\; \int \frac{x^n}{\ln x}\, \mathrm{d}x;\; \ldots
+	\end{gather*}\\
+	Ovo su neke od funkcija koje se ne mogu izraziti preko elementarnih funkcija.
+	
+\subsubsection{Integracija trigonometrijskih funkcija}
+	Integral oblika $\int R (\sin x, \cos x)\, \mathrm{d}x$ gde je $R(\sin x, \cos x)$ racionalna funkcija po $\sin x$ i $\cos x$ svodi se na integral racinalne funkcije na sledeći način:
+	\begin{enumerate}[label=\textbf{\arabic*.)}]
+		\item 
+			Ako je $R (-\sin x, -\cos x) = R (\sin x, \cos x)$ uvodi se smena 
+			\begin{align*}
+				\begin{aligned}
+					t &= \tg x\\
+					dx &= \frac{dt}{1+t^2}\\
+				\end{aligned}
+				\quad \quad
+				\begin{aligned}
+					\cos x &= \frac{1}{\sqrt{1+t^2}}\\
+					\sin x &= \frac{t}{\sqrt{1+t^2}}
+				\end{aligned}
+			\end{align*}
+		\item 
+			Ako je $R (+\sin x, -\cos x) = -R (\sin x, \cos x)$ uvodi se smena 
+			\begin{align*}
+				\begin{aligned}
+					t &= \sin x\\
+					dx &= \frac{dt}{\sqrt{1-t^2}}\\
+				\end{aligned}
+				\quad \quad
+				\begin{aligned}
+					\cos x &= \sqrt{1-t^2}\\
+				\end{aligned}
+			\end{align*}
+		\item 
+			Ako je $R (-\sin x, +\cos x) = -R (\sin x, \cos x)$ uvodi se smena 
+			\begin{align*}
+				\begin{aligned}
+					t &= \cos x\\
+					dx &= -\frac{dt}{\sqrt{1-t^2}}\\
+				\end{aligned}
+				\quad \quad
+				\begin{aligned}
+					\sin x &= \sqrt{1-t^2}\\
+				\end{aligned}
+			\end{align*}
+		\item Univerzalna trigonometrijska smena može se uvek primeniti
+			\begin{align*}
+				\begin{aligned}
+					t &= \tg \frac{x}{2}\\
+					dx &= \frac{2dt}{1+t^2}\\
+				\end{aligned}
+				\quad \quad
+				\begin{aligned}
+					\sin x &= \frac{2t}{1+t^2}\\
+					\cos x &= \frac{1-t^2}{1+t^2}
+				\end{aligned}
+			\end{align*}
+			-\textbf{Napomena:} izbegavati univerzalnu trigonometrijsku smenu.
+	\end{enumerate}

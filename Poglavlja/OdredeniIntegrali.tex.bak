@@ -1,0 +1,303 @@
+\section{Određeni integrali}
+\subsection{Uvod}
+\begin{definition}
+	Neka je data funkcija $f$ definisana na segmentu $[a, b]$ gde su $a, b \in \mathbb{R} \land a<b$. Uređena $m$-torka $d = (x_0, x_1, \ldots, x_n, \xi_0, \xi_1, \ldots, \xi_{n-1})$ takva da je $a \equiv x_0 < x_1 < \ldots < x_n \equiv b\; \land \;x_i \leq \xi_i \leq x_{i+1}; \; i=\overline{0, n-1}$ nazivamo \textbf{podelom} segmenta $[a, b]$
+\end{definition}
+\begin{definition}
+	 Suma $\sum^{n-1}_{i=0} f(\xi_i)(x_{i+1}-x_i)$ naziva se \textbf{Rimanova (integralna) suma} funkcije $f$ na segmentu $[a, b]$ za datu podelu $d$.\\
+	 \textit{Oznaka:} $$S(f, d, a, b)$$
+\end{definition}
+\begin{definition}
+	\textbf{Norma} podele d je $||d|| = max(x_{i+1}-x_i); \; i=\overline{0,n-1}$.\\
+	\textbf{Napomena:} Iz ove definicije sledi da ako $||d|| \to 0$ tada $(\forall i) x_{i+1}-x_i \to 0 \land n \to \infty$
+\end{definition}
+\begin{definition}
+	Neka je data funkcija $f$ definisana na segmentu $[a, b]$ gde su $a, b \in \mathbb{R} \land a<b$. Ako postoji realan broj $I$ takav da važi:
+	$$(\forall \varepsilon > 0)(\exists \delta(\varepsilon)>0)(\forall d)\left(||d||<\delta(\epsilon) \implies \left|I- \sum^{n-1}_{i = 0}f(\xi_i)(x_{i+1}-x_i) \right|<\varepsilon\right)$$
+	$$\text{tj. } \lim_{||d||\to 0} S(f, d, a, b) = I$$ tada se broj $I$ naziva \textbf{određeni (Rimanov) integral} funkcije $f$ na segmentu $[a, b]$. \\
+	\textit{Oznaka:} $$I = \int\limits^b_a f(x)\, \mathrm{d}x$$
+\end{definition}
+\begin{definition}
+	Ako postoji broj $I\in \mathbb{R}$ takav da je $\lim_{||d||\to 0} S(f, d, a, b) = I$ kažemo da je funkcija $f$ \textbf{integrabilna} na segmentu $[a,b]$.
+\end{definition}
+
+
+\subsection{Potrebni i dovoljni uslovi za integrabilnost funkcija}
+
+\begin{definition}
+	(Darbuove sume funkcije $f$ na segentu $[a,b]$)\\
+	Neka je funkcija $f$ ograničena na segmentu $[a,b]$. Ako segment $[a,b]$ podelimo tačkama $a \equiv x_0 < x_1 < \ldots < x_n \equiv b$ i formiramo sume 
+	$$\begin{aligned}
+		\underline{S}(f,d,a,b) = \sum^{n-1}_{i=0} m_i(x_{i+1}-x_i)
+	\end{aligned}
+	\quad \text{ i } \quad
+	\begin{aligned}
+		\overline{S}(f,d,a,b) = \sum^{n-1}_{i=0} M_i(x_{i+1}-x_i)
+	\end{aligned}$$
+	gde $m_i$ i $M_i$ označavaju infinum i supremum funkcije $f$ na segmentu $[x_i,x_{i+1}]; \; i=\overline{0, n-1}$, $\underline{S}$ i $\overline{S}$ se nazivaju \textbf{donja} i \textbf{gornja Darbuova suma} funkcije $f$ na segmentu $[a,b]$.\\
+	\textbf{Napomena:} Ako je $f$ neprekidna funkcija na $[a,b]$ onda $f$ na segmentima $[x_i,x_{i+1}]$ (u nekim tačkama $\xi_i$) dostiže svoj infinum $m_i$ i supremum $M_i$, pa su sume $\underline{S}$ i $\overline{S}$ specijalni slučajevi opšteg pojma integralne sume.
+\end{definition}
+\begin{theorem}
+	\textbf{Ograničena} funkcija $f$ je \textbf{integrabilna} na $[a,b]$ ako i samo ako je: $$\lim_{||d||\to 0} \left(\overline{S}(f,d,a,b) - \underline{S}(f,d,a,b)\right) = 0$$
+\end{theorem}
+\begin{theorem}
+	Ako je funkcija $f$ \textbf{integrabilna} na segmentu $[a,b]$ tada je $f$ \textbf{ograničena} na $[a,b]$ \\
+	\textbf{Napomena:} obrnuto ne važi
+\end{theorem}
+\begin{theorem}
+	Ako je funkcija $f$ \textbf{neprekidna} na segmentu $[a,b]$ tada je \textbf{integrabilna} na $[a,b]$
+\end{theorem}
+\begin{theorem}
+	Ako je funkcija $f$ \textbf{definisana} i  \textbf{ograničena} na segmentu $[a,b]$ i ako na $[a,b]$ ima \textbf{konačno mnogo} tačaka prekida, tada je $f$ \textbf{integrabilna} na $[a,b]$
+\end{theorem}
+\begin{theorem}
+	Ako je funkcija $f$ \textbf{monotona} na segmentu $[a,b]$ tada je $f$ \textbf{integrabilna} na $[a,b]$.
+\end{theorem}
+
+
+\subsection{Svojstva određenog (Rimanovog) integrala}
+\begin{enumerate}[label=\textbf{\arabic*.)}]
+	\item
+		\begin{theorem}
+			Ako je funkcija $f$ integrabilna na segmentu $[a,b]$ gde je $a,b \in \mathbb{R} \land a<b$ onda $$\exists \int \limits^b_a f(x) \, \mathrm{d}x = - \int \limits^a_b f(x) \, \mathrm{d}x$$
+		\end{theorem}
+	\item 
+		\textbf{Linearnost integrala}
+		
+		\begin{theorem}
+				Neka su funkcije $f$ i $g$ integrabilne na segmentu $[a,b]$ i neka je funkcija $h(x) = \alpha f(x)+ \beta g(x)$ gde su $\alpha, \beta \in \mathbb{R}$ integrabilna na $[a,b]$
+				$$\int\limits^b_a \left(\alpha f(x) + \beta g(x)\right) \, \mathrm{d} x = \alpha \int \limits^b_a f(x)\, \mathrm{d} x + \beta \int \limits^b_a g(x) \, \mathrm{d} x$$
+		\end{theorem}
+		\begin{proof}
+			Funkcija $f$ je integrabilna $\implies \int \limits^b_a f(x) \, \mathrm{d}x = \lim_{||d|| \to 0} \sum (x_{i+1}-x_i)f(\xi_i)$\\
+			Funkcija $g$ je integrabilna $\implies \int \limits^b_a g(x) \, \mathrm{d}x = \lim_{||d|| \to 0} \sum (x_{i+1}-x_i)g(\xi_i)$\\
+			Funkcija $h$ je integrabilna $\implies \int \limits^b_a h(x) \, \mathrm{d}x =$\\
+			\begin{gather*}
+				=\lim_{||d|| \to 0} \sum (x_{i+1}-x_i)(\alpha f(\xi_i) + \beta g(\xi_i)) =\\
+				= \lim_{||d|| \to 0} \left(\sum (x_{i+1}-x_i)\alpha f(\xi_i) + \sum (x_{i+1}-x_i)\beta g(\xi_i)\right) =\\
+				= \lim_{||d|| \to 0} \sum (x_{i+1}-x_i)\alpha f(\xi_i) + \lim_{||d|| \to 0}\sum (x_{i+1}-x_i)\beta g(\xi_i) =\\
+				= \alpha\lim_{||d|| \to 0} \sum (x_{i+1}-x_i) f(\xi_i) + \beta \lim_{||d|| \to 0}\sum (x_{i+1}-x_i) g(\xi_i) =\\
+				= \alpha \int \limits^b_a f(x) \, \mathrm{d}x + \beta \int 	\limits^b_a g(x) \, \mathrm{d}x
+			\end{gather*}
+		\end{proof}
+	\item
+		\textbf{Aditivnost integrala}
+		\begin{theorem}
+			Za bilo koje $c\in [a,b]$ važi $$\int\limits^b_a f(x) \, \mathrm{d} x = \int\limits^c_a f(x) \, \mathrm{d} x + \int\limits^b_c f(x) \, \mathrm{d} x$$
+		\end{theorem}
+	\item
+		\textbf{Modularna nejednakost}
+		\begin{theorem}
+			Funkcija $|f(x)|$ je integrabilna na $[a,b]$ i važi:
+			$$\left| \int \limits^b_a f(x) \, \mathrm{d} x \right| \leq \int \limits^b_a |f(x)| \, \mathrm{d} x$$ 
+		\end{theorem}
+	\item \begin{theorem}
+			Funkcija $f(x)g(x)$ je integrabilna na $[a,b]$.
+		\end{theorem}
+	\item \begin{theorem}
+			Funkcija $f(x)$ je integrabilna na $[\alpha, \beta] \subseteq [a,b]$
+		\end{theorem}
+	\item
+		\begin{theorem}
+			Ako je funkcija f integrabilna i $(\forall x \in [a,b]) f(x)=f_1(x)$ osim u konačno mnogo tačaka $c_1, c_2, \ldots, c_n\in[a,b]$ gde $f(c_i) \centernot = f_1(c_i)\; i= \overline{1, n}$ tada je funkcija $f_1(x)$ integrabilna na $[a,b]$ i važi:
+			$$\int \limits^b_a f(x) \, \mathrm{d} x = \int \limits^b_a f_1(x) \, \mathrm{d} x$$
+		\end{theorem}
+		\begin{proof}
+			Pretpostavimo da se $f$ i $f_1$ razlikuju u jednoj tački $c \in [a,b]$
+			$$(\forall x \in [a,b])x\centernot = c \implies f(x)=f_1(x)$$
+			Izaberimo proizvoljnu podelu $d$ segmenta $[a,b]$
+			$$d=(x_0, x_1, \ldots,x_n, \xi_1, \xi_2, \ldots, \xi_n)$$
+			Posmatrajmo integralne sume $S(f, d, a, b)$ i $S(f_1, d, a, b)$
+			Ako tačka $c$ nije tačka podele $d$, tj. $(\forall \xi \in d) \xi\centernot = c$ onda su obe sume jednake. 
+			Sume se razlikuju za $f$ i $f_1$ samo u slučaju da je $(\exists \xi \in d) \xi = c$ i tada bi se razlika ogledala u sledećem sabirku:
+			$$f(c)(x_i-x_{i-1}) \text{ i } f_1(c)(x_i-x_{i-1})$$
+			Oba sabirka međutim teže nuli kada norma podele teži nuli $||d||\to 0$
+			$$\implies \lim_{||d||\to 0} S(f, d, a, b) = \int \limits^b_a f(x) \, \mathrm{d}dx = \lim_{||d||\to 0} S(f_1, d, a, b) = \int \limits^b_a f_1(x) \, \mathrm{d}dx  $$
+			Ako imamo konačan broj tačaka za koje se $f$ i $f_1$ razlikuju na $[a,b]$ tada za svaku od njih ponovimo isti postupak kao za tačku $c$
+			$$\implies \int \limits^b_a f(x) \, \mathrm{d}x = \int \limits^b_a f_1(x) \, \mathrm{d}x$$
+		\end{proof}
+	\item
+		\begin{theorem}
+			\begin{enumerate}[label = \arabic*)]
+				\item
+					$(\forall x \in [a,b])f(x)\geq 0 \implies \int \limits^b_a f(x) \, \mathrm{d}x \geq 0$
+				\item
+					$(\forall x \in [a,b])f(x)> 0 \implies \int \limits^b_a f(x) \, \mathrm{d}x > 0$	
+			\end{enumerate}
+		\end{theorem}
+	\item
+		\textbf{Monotonost integrala}
+		\begin{enumerate}[label = \arabic*)]
+				\item
+					$(\forall x \in [a,b])f(x)\leq g(x) \implies \int \limits^b_a f(x) \, \mathrm{d}x \leq \int \limits^b_a g(x) \, \mathrm{d}x$
+				\item
+					$(\forall x \in [a,b])f(x)< g(x) \implies \int \limits^b_a f(x) \, \mathrm{d}x < \int \limits^b_a g(x) \, \mathrm{d}x$	
+		\end{enumerate}
+		\item
+			\begin{theorem}
+				\textbf{(Stav o srednjoj vrednosti)}\\
+				Neka je funkcija $f$ integrabilna na segmentu $[a,b]$ i neka $(\forall x \in [a,b]) m \leq f(x) \leq M$. Tada:
+				$$(\exists \mu \in [m,M]) \int \limits^b_a f(x) \, \mathrm{d}x = \mu (b-a)$$
+			\end{theorem}
+			\begin{proof}
+				\begin{gather*}
+					(\forall x \in [a,b]) m \leq f(x) \leq M\\
+					\int \limits^b_a m \, \mathrm{d}x \leq \int \limits^b_a f(x) \, \mathrm{d}x \leq \int \limits^b_a M \, \mathrm{d}x \\
+					m(b-a)\leq\int \limits^b_a f(x) \, \mathrm{d}x\leq 	M(b-a)\\
+					\int \limits^b_a f(x) \, \mathrm{d}x = \mu (b-a) \text{ gde je } m\leq\mu \leq M
+				\end{gather*}
+			\end{proof}
+			\begin{corollary}
+				Ako je $f$ neprekidna na $[a,b]$ tada:
+				$$(\exists c \in [a,b])f(c) = \mu \implies \int \limits^b_a f(x) \, \mathrm{d}x = f(c)(b-a)$$
+				Ako je funkcija integrabilna na $[a,b]$ srednja vrednost funkcije na $[a,b]$ je 
+				$$f_s = \frac{1}{b-a}\int \limits^b_a f(x) \, \mathrm{d}x$$
+			\end{corollary}
+			\begin{proof}
+				Iz diferencijalnog računa: $f$ je neprekidna na $[a,b]$
+				$$\implies c \in [a,b] f(c) = \mu$$
+			\end{proof}
+\end{enumerate}
+
+
+\subsection{Geometrijske primene određenog integrala}
+
+
+\subsubsection{Površine ravnih likova}
+\begin{theorem}
+	Površina $P$ koja je ograničena neprekidnom funkcijom $f(x)\geq 0$ i odsečcima pravih $x=a$, $x=b$ i $y=0$ određena je formulom:
+	$$P  = \int \limits^b_a f(x) \, \mathrm{d}x$$
+\end{theorem}
+
+\subsubsection{Dužina luka krive}
+\begin{theorem}
+	Neka je u ravni data kriva $(a\leq x \leq b) y=f(x)$ i neka su $f(x)$ i $f'(x)$ neprekidne na $[a,b]$. Dužina luka krive nad segmentom $[a,b]$ je:
+	$$L = \int \limits^b_a \sqrt{1+(f'(x))^2} \, \mathrm{d}x = \int \limits^b_a \sqrt{1+(\frac{\mathrm{d}y}{\mathrm{d}x})^2} \, \mathrm{d}x = \int \limits^b_a \sqrt{\mathrm{d}x^2 + \mathrm{d}y^2}$$
+\end{theorem}
+
+\subsubsection{Zapremina obrtnoh tela}
+
+\subsubsection{Površina obrtnoh tela}
+\begin{theorem}
+	Neka su funkcije $f$ i $f'$ neprekidne na odsečku $[a,b]$. Ako se krivoliniski trapez, čije su stranice segment $[a,b]$, delovi pravih $x=a$, $x=b$ i kriva $(a\leq x \leq b) y=f(x)$ obrće oko $x$-ose, dobija se obrtno telo. Površina tog tela je:
+	$$P = 2\pi \int \limits^b_a f(x) \sqrt{1+(f'(x))^2}\, \mathrm{d}x$$
+\end{theorem}
+
+
+\subsection{Veza između određenog i neodređenog integrala}
+\begin{theorem}
+	Neka je funkcija $f$ integrabilna na $[a,b]$ i neka je $x\in [a,b]$ i, prema tome, neka je funkcija $\varphi = \int \limits^x_a f(t) \, \mathrm{d}t$. Pod ovim uslovima važi:
+	\begin{enumerate}[label = \arabic*)]
+		\item
+			Funkcija $\varphi(x)$ je neprekidna na $[a,b]$.
+		\item
+			Ako je $f$ neprekidna na $[a,b]$ tada $(\forall x \in [a,b]) \varphi'(x) = f(x)$ ($\varphi$ je jedna primitivna funkcija funkcije $f$ na $[a,b]$)
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	\begin{enumerate}[label = \arabic*)]
+		\item
+			Neka je $x\in [a,b]$ i neka je $\Delta x$ takvo da je $x+\Delta x \in [a,b]$.\\
+			Ako je $\Delta x > 0$ (analogno se pokazuje za $\Delta x <0$, tada $[x+\Delta x] \subset [a,b]$) posmatrajmo segment $[x,x+\Delta x]\subset [a,b]$
+			$$\varphi(x+\Delta x) - \varphi(x) = \int \limits^{x+\Delta x}_a f(t) \, \mathrm{d}t - \int \limits^x_a f(t) \, \mathrm{d}t=$$
+			$$= \int \limits^{x+\Delta x}_a f(t) \, \mathrm{d}t + \int \limits^a_x f(t) \, \mathrm{d}t=\int \limits^{x+\Delta x}_x f(t) \, \mathrm{d}t$$
+			Na osnovu teorema sa kojima smo se vež upoznali važi sledeći niz implikacija:\\
+			$f$ je integrabilna na $[a,b] \implies f$ je integrabilna na $[x,x+\Delta x]\subset[a,b] \implies f$ je ograničena na $[x,x+\Delta x] \implies (\exists m_1, M_1)(\forall t \in [x, x+\Delta x]) m_1\leq f(t) \leq M_1$ Na osnovu teoreme o srednjoj vrednosti za određeni integral sledi: $(\exists \mu) m_1\leq \mu \leq M_1$ takvo da je 
+			\begin{gather*}
+				\int \limits^{x+\Delta x}_x f(t) \, \mathrm{d}t = \mu \Delta x\\
+				\varphi(x+\Delta x)- \varphi(x) = \mu \Delta x\\
+				 \lim_{\Delta x \to 0} (\varphi(x+\Delta x)-\varphi(x)) = \lim_{\Delta x \to 0} \mu \Delta x = \mu \lim_{\Delta x \to 0}\Delta x = 0\\
+				\lim_{\Delta x \to 0} (\varphi(x+\Delta x)-\varphi(x)) = 0\\
+				\implies F \text{ je neprekidna funkcija } \forall x \in [a,b]
+			\end{gather*}		
+		\item 
+			$f$ je neprekidna na $[a,b] \implies f$ je neprekidna i na $[x, x+\Delta x] \in [a,b]$
+			\begin{gather*}
+				\implies ( \exists c \in [x, x+ \Delta x]) f(c) = \mu \\
+				c = x+\theta \Delta x; \; \theta \in [0,1]\\
+				\varphi(x+\Delta x)-\varphi(x) = \mu \Delta x\\
+				\frac{\varphi(x+\Delta x)-\varphi(x)}{\Delta x} = f(c) = f(x+ \theta \Delta x)\\
+				\lim_{\Delta x \to 0}	\frac{\varphi(x+\Delta x)-\varphi(x)}{\Delta x} = \lim_{\Delta x \to 0} f(x+ \theta \Delta x)\\
+				\varphi'(x) = f(x); \; \forall x \in [a,b]\\
+			\end{gather*}
+			\begin{corollary}
+				$\varphi(x)$ je jedna primitivna funkcija funkcije $f$
+				$$(\exists c \in \mathbb{R}) \varphi (x) = F(x) +c$$
+				Za $x=a\; : \;\varphi(a) = F(a)+c = \int \limits^a_a f(x) \, \mathrm{d} x = 0 \implies c = -F(a)$\\
+				Za $x=b\; : \;\varphi(b) = F(b)+c = \int \limits^b_a f(x)\, \mathrm{d}x$
+				$$\underbrace{\int \limits^b_a f(x) \, \mathrm{d} x = F(b)-F(a) = F(x)|^b_a}_{\text{Njutn-Lajbnicova formula}}$$
+			\end{corollary}
+	\end{enumerate}
+\end{proof}
+\begin{theorem}
+	Ako je funkcija $f$ neprekidna tada važi:
+	$$\int \limits^b_a f(x) \, \mathrm{d} x = F(x)|^b_a = F(b)-F(a)$$ gde je $F$ bilo koja primitivna funkcija funkcije $f$.
+\end{theorem}
+
+\subsection{Parcijalna integracija i smena promenljive kod određenog integrala}
+\begin{theorem}
+	\textbf{(Parcijalna integracija kod određenog integrala)}\\
+	Ako su funkcije $u(x)$, $v(x)$, $u'(x)$ i $v'(x)$ neprekidne na $[a,b]$ tada je:
+	$$\int\limits^b_a u(x)\, \mathrm{d} v(x) = u(x)v(x)|^b_a - \int\limits^b_a v(x)\, \mathrm{d} u(x) = u(b)v(b) - u(a)v(a) - \int\limits^b_a v(x)\, \mathrm{d} u(x)$$
+\end{theorem}
+\begin{theorem}
+	\textbf{(Smena promenljivo kod određenog integrala)}\\
+	Ako su ispunjeni sledeći uslovi:
+	\begin{enumerate}[label = \alph*)]
+		\item 
+			funkcija $f(x)$ je neprekidna na segmentu $[a,b]$
+		\item 
+			funkcije $x=\varphi(t)$ i $\varphi'(t)$ su neprekidne na segmentu $[\alpha, \beta]$ gde je $a = \varphi(\alpha)$ i $b = \varphi(\beta)$ tada važi:
+			$$\int \limits^b_a f(x) \, \mathrm{d}x = \int \limits^\beta_\alpha f(\varphi(t))\varphi'(t)\, \mathrm{d}t$$
+	\end{enumerate}
+	\textbf{Napomena:} U navedenoj teoremi formula smene promenljive izvedena je pod pretpostavkom da je funkcija $f$ neprekidna, što je i najčešći slučaj u primenama. U slučaju da je funkcija $\varphi$ strogo monotona formula važi i pod slabijom pretpostavkom da je $f$ integrabilna na $[a,b]$.
+\end{theorem}
+\begin{theorem}
+	Ako je $f:\mathbb{R}\to \mathbb{R}$ neprekidna i periodična funkcija sa periodom $T$, tada važi:
+	$$\int \limits^{a+T}_a f(x) \, \mathrm{d}x = \int \limits^T_0 f(x) \, \mathrm{d}x$$
+\end{theorem}
+\begin{proof}
+$$\ldots \quad \text{?}$$
+\end{proof}
+\begin{theorem}
+	Ako je funkcija $f$ neprekidna na $[-a, a]$ tada važi:
+	$$\int \limits^a_{-a}f(x)\, \mathrm{d} x =
+	\begin{cases}
+		0 &\text{ako je }f\text{ neparna funkcija}\\
+		2\int\limits^a_0 f(x)\, \mathrm{d} x \quad &\text{ako je }f\text{ parna funkcija}
+	\end{cases}
+	$$
+\end{theorem}
+\begin{proof}
+$$\ldots \quad \text{?}$$
+\end{proof}
+
+\subsection{Nesvojsveni integral}
+Postoje dva razloga zbog kojih integral nije Rimanov:
+\begin{enumerate}[label = \arabic*.)]
+	\item
+		Oblast integracije je $\pm \infty$
+	\item
+		Integral ima singularne tačke u intervalu
+\end{enumerate}
+\begin{definition}
+	\begin{enumerate}[label = \arabic*)]
+		\item
+			Neka je $f$ definisana na intervalu $[a, +\infty)$, i integrabilna na svakom konačnom $[\alpha, \beta]\subset[a,+\infty)$. Tada je $\int \limits^{+\infty}_af(x)\, \mathrm{d}x$ integral koji zovemo nesvojstvenim (nepravim) i definiše se kao:
+			$$\int \limits^{+\infty}_a f(x)\, \mathrm{d}x \triangleq \lim_{\beta\to + \infty}\int\limits^\beta_a f(x)\, \mathrm{d}x$$
+		\item	
+			$\int \limits^b_{-\infty} f(x)\, \mathrm{d}x \triangleq \lim_{\alpha \to -\infty} \int \limits^b_\alpha f(x)\, \mathrm{d}x$
+		\item
+			$\int \limits^{+\infty}_{-\infty} f(x)\, \mathrm{d}x = \int \limits^c_{-\infty} f(x)\, \mathrm{d}x + \int \limits^{+\infty}_c f(x)\, \mathrm{d}x \triangleq \lim_{\alpha \to -\infty} \int \limits^c_\alpha f(x)\, \mathrm{d}x + \lim_{\beta \to +\infty} \int \limits^\beta_c f(x)\, \mathrm{d}x$
+	\end{enumerate}
+\end{definition}
+\begin{definition}
+	\begin{enumerate}[label = \alph*)]
+		\item
+			Neka je $f$ definisana na segmentu $[a,b)$ i integrabilna na svakom konačnom $[\alpha, \beta]\subset[a,b)$ tada važi:
+			$$\underbrace{\int\limits^b_a f(x)\, \mathrm{d}x}_{\text{Nesvojstven}} = \underbrace{\lim_{\beta \to b_-} \int \limits^\beta_a f(x)\, \mathrm{d}x}_{\text{Konačan, beskonačan ne postoji}}$$
+		\item
+			Neka je $f$ definisana na segmentu $(a,b]$ i integrabilna na svakom konačnom $[\alpha, \beta]\subset(a,b]$ tada važi:
+			$$\underbrace{\int\limits^b_a f(x)\, \mathrm{d}x}_{\text{Nesvojstven}} = \underbrace{\lim_{\alpha \to a_+} \int \limits^b_\alpha f(x)\, \mathrm{d}x}_{\text{Konačan, beskonačan ne postoji}}$$
+	\end{enumerate}
+\end{definition}

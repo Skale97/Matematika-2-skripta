@@ -1,0 +1,269 @@
+\section{Kombinatorika}
+\subsection{Osnovni kombinatorni principi}
+\begin{enumerate}[label=\textbf{\arabic*.)}]
+	\item \textbf{Princip jednakosti}\\
+		Ako između dva konačna skupa $A$ i $B$ postoji bijekcija $f:A\to B$ tada skupovi $A$ i $B$ imaju isti broj elemenata, tj. $$|A|=|B|$$
+	\item \textbf{Princip zbira}
+		Ako su $A$ i $B$ konačni, disjunktni skupovi, tada je $$|A\cup B|=|A|+|B|$$
+		\textbf{Napomena:} Ili treba da asocira na zbir. Dakle kada su neka dva elementa u odnosu $\lor$ koristi se princip zbir
+	\item \textbf{Princip proizvoda}
+		Ako su $A$ i $B$ konačni skupovi, tada je $$|A\times B|=|A||B|$$
+\end{enumerate}
+
+\begin{definition}
+	\textbf{Permutacija} skupa $x_n = \{x_1, x_2, \ldots, x_n\}$ je bilo koja uređena $n$-torka različitih elemenata tog skupa
+\end{definition}
+\begin{example}
+	Permutacije skupa $x_n = {1, 2, 3}$ su:
+	\begin{align*}
+		\begin{aligned}
+		(1,2,3)\\
+		(2,3,1)\\
+		(3,1,2)\\
+		\end{aligned}
+		\quad \quad
+		\begin{aligned}
+		(3,2,1)\\
+		(2,1,3)\\
+		(1,3,2)\\
+		\end{aligned}
+	\end{align*}
+	jer na prvom mestu može da bude bilo koji od članova skupa (3 mogućnosti), na drugom mestu mogu biti svi elementi osim jednog koji je na prvom mestu (2 mogućnosti), i na poslednjem samo jedan preostali element (1 mogućnost).\\
+	Ukupno mogućnosti: $3*2*1=3!=6$	
+\end{example}
+\begin{theorem}
+	\textbf{Broj permutacija} skupa od $n$ elemenata je $$n!$$
+\end{theorem}
+
+\begin{definition}
+	\textbf{Varijacija} $k$-te klase skupa $x_n$ je bilo koja uređena $k$-torka različirih elemenata iz skupa $x_n$
+\end{definition}
+\begin{example}
+	Varijacije 3. klase skupa $x_n = {a,b,c,d}$ su:
+	\begin{align*}
+		\begin{aligned}
+		(a,b,c)\\
+		(a,b,d)\\
+		(a,c,b)\\
+		(a,c,d)\\
+		(a,d,b)\\
+		(a,d,c)\\
+		\end{aligned}
+		\quad \quad
+		\begin{aligned}
+		(b,a,c)\\
+		(b,a,d)\\
+		(b,c,a)\\
+		(b,c,d)\\
+		(b,d,a)\\
+		(b,d,c)\\
+		\end{aligned}
+		\quad \quad
+		\begin{aligned}
+		(c,a,b)\\
+		(c,a,d)\\
+		(c,b,a)\\
+		(c,b,d)\\
+		(c,d,a)\\
+		(c,d,b)\\
+		\end{aligned}
+		\quad \quad
+		\begin{aligned}
+		(d,a,b)\\
+		(d,a,c)\\
+		(d,b,a)\\
+		(d,b,c)\\
+		(d,c,a)\\
+		(d,c,b)\\
+		\end{aligned}
+	\end{align*}
+	jer na prvom mestu može da bude bilo koji od članova skupa (4 mogućnosti), na drugom mestu mogu biti svi elementi osim jednoh koji je na prvom mestu (3 mogućnosti), i na poslednjem može biti neki od preostala dva (2 mogućnosti).\\
+	Ukupno mogućnosti: $4*3*2=\frac{4!}{1!}=24$
+\end{example}
+\begin{theorem}
+	\textbf{Broj varijacija} $k$-te klase skupa od $n$ elemenata je $$V_n^k = n(n-1)(n-2)\ldots(n-n+1) = \frac{n!}{(n-k)!}$$
+\end{theorem}
+
+\begin{definition}
+	\textbf{Kombinacija} $k$-te klase skupa $x_n$ je bilo koji njegov podskup sa $k$ elemenata
+\end{definition}
+\begin{example}
+	Kombinacije 2. klase skupa $x_n = {a,b,c,d}$ su:
+	\begin{align*}
+		\begin{aligned}
+			\{a,b\}\\
+			\{a,c\}\\
+		\end{aligned}
+		\quad 
+		\begin{aligned}
+			\{a,d\}\\
+			\{b,c\}\\
+		\end{aligned}
+		\quad 
+		\begin{aligned}
+			\{b,d\}\\
+			\{c,d\}\\
+		\end{aligned}
+	\end{align*}
+	jer jedan član može da bude bilo koji (4 mogućnosti), a drugi može da bude neki od preostalih (3 mogućnosti), međutim pošto redosled nije bitan, a broj permutacija skupa gde je $n=2$  je $2! = 2*1 = 2$, ukupan broj kombinacija je 2 puta manji od broja varijacija 2. klase skupa $x_n$.\\
+	Ukupno mogućnosti: $\frac{4*3}{2}=\frac{4!}{(4-2)!2!}=6$  \\
+	Kombinacije 3. klase skupa $x_n$ su:
+	\begin{align*}
+		\{a,b,c\}\quad\{a,b,d\}\quad\{b,c,d\}\\
+	\end{align*}
+	jer jedan član može da bude bilo koji (4 mogućnosti), drugi može da bude neki od preostalih (3 mogućnosti) i poslednji može da bude neki od preostala 2 (2 mogućnosti), međutim pošto redosled nije bitan, a broj permutacija skupa gde je $n=3$ je $3! =6$, ukupan broj kombinacija je 6 puta manji od broja varijacija 3. klase skupa $x_n$.\\
+	Ukupno mogućnosti: $\frac{4*3*2}{6}=\frac{4!}{(4-3)!3!}=4$
+\end{example}
+\begin{theorem}
+	\textbf{Broj kombinacija} $k$-te klase skupa od $n$ elemenata je $$C_n^k=\binom nk = \frac{n(n-1)\ldots(n-(k-1)9}{k!} = \frac{n!}{(n-k)!k!}$$
+\end{theorem}
+
+\begin{definition}
+	\textbf{Varijacija sa ponavljanjem} $k$-te klase skupa $x_n$ je bilo koja uređena $k$-torka njegovih elemenata
+\end{definition}
+\begin{example}
+	Varijacije sa ponavljanjem 2. klase skupa $x_n = \{a,b,c,d\}$ su:
+	\begin{align*}
+		\begin{aligned}
+			(a,a)\\
+			(a,b)\\
+			(a,c)\\
+			(a,d)\\
+		\end{aligned}
+		\quad \quad
+		\begin{aligned}
+			(b,a)\\
+			(b,b)\\
+			(b,c)\\
+			(b,d)\\
+		\end{aligned}
+		\quad \quad
+		\begin{aligned}
+			(c,a)\\
+			(c,b)\\
+			(c,c)\\
+			(c,d)\\
+		\end{aligned}
+		\quad \quad
+		\begin{aligned}
+			(d,a)\\
+			(d,b)\\
+			(d,c)\\
+			(d,d)\\
+		\end{aligned}
+	\end{align*}
+	jer da prvom mestu može biti bilo koji element (4 mogućnosti), a i na drugom mestu može biti bilo koji element jer su ponavljanja dozvoljena (4 mogućnosti).\\
+	Ukupno mogućnosti: $4*4 = 4^2 = 16$
+\end{example}
+\begin{theorem}
+	\textbf{Broj varijacija sa ponavljanjem} $k$-te klase skupa od $n$ elemenata je $$V_n^k = n^k$$
+\end{theorem}
+
+\begin{definition}
+	Dato je ukupno $n$ objekata $k$ različitih tipova, $n_i(i=\overline{1,k})$ je broj ponavljanja $i$-tog tipa objekta, $n_1+ n_2+ \ldots+ n_k = n$. \textbf{Permutacija sa ponavljanjem} navedene familije je svaki raspored tih elemenata.
+\end{definition}
+\begin{example}
+	Neke od permutacija sa ponavljanjem familije $a,a,b,b,b,c$ su:
+	$$aabbbc,\; baabbc,\; baabcb,\;\ldots$$
+	Ukupan broj permutacija sa ponavljanjem je, slično kao kod kombinacija, jednak broju permutacija podeljenom sa brojem istih elemenata svakog tipa, jer se ne može odrediti razlika između dve permutacije gde su zamenjena mesta elementima istog tipa.
+	Ukupan broj mogućnosti: $\frac{6!}{2!3!1!}=60$
+\end{example}
+\begin{theorem}
+	\textbf{Broj permutacija sa ponavljanjem} date familije je $$P_{n_1, n_2, \ldots, n_k} = \frac{n!}{n_1!n_2!\ldots n_k!}$$
+\end{theorem}
+
+\begin{definition}
+	\textbf{Kombinacija $k$ te klase sa ponavljanjem} skupa $x_n$ je bilo koja familija sastavljena od tačno $k$ ne obavezno različitih elemenata skupa $x_n$
+\end{definition}
+\begin{example}
+	Kombinacije sa ponavljanjem 2. klase skupa $x_n = {a,b,c,d}$ su:
+	\begin{align*}
+		\begin{aligned}
+			(a,a)\\
+			\\
+			\\
+			\\
+		\end{aligned}
+		\quad \quad
+		\begin{aligned}
+			(a,b)\\
+			(b,b)\\
+			\\
+			\\
+		\end{aligned}
+		\quad \quad
+		\begin{aligned}
+			(a,c)\\
+			(b,c)\\
+			(c,c)\\
+			\\
+		\end{aligned}
+		\quad \quad
+		\begin{aligned}
+			(a,d)\\
+			(b,d)\\
+			(c,d)\\
+			(d,d)\\
+		\end{aligned}
+	\end{align*}
+	Po principu jednakosti možemo naći bijekciju skupa $x_n$ koju možemo lakše da prebrojimo. Jedan način koji dosta olakšava ovaj problem je da zamislimo da postoje 4 polja (jer postoje 4 elementa u skupu $x_n$) koja su odvojena pomoću 3 crtice. Pošto su kombinacije 2. klase, imamo i 2 kružića koja treba da se rasporede u polja (s tim da u isto polje može da se stavi i više kružića, ili ni jedan). Na taj način dobijamo skup od 5 elemenata (3 crtice i 2 kružića). Jedino što preostaje je da rasporedimo crtice i kružiće proizvoljno (jer ne postoje ograničenja). Broj mogućnosti je sada odabir 2 mesta od 5 mogućih za kružiće dok se ostala popunjavaju crticama (ili obrnuto). Naravno, isti princip važi i ako je broj klasa veći od broja elemenata skupa (broj kružića veći od broj crtica)
+\end{example}
+\begin{definition}
+	Reprezentacija prirodnoh broja $n$ u obliku $a_1+a_2+\ldots+a_k=n$ gde su $a_1, a_2, \ldots, a_k \in \mathbb{N}$ naziva se \textbf{podela} ili \textbf{razbijanje} tog broja, ili preciznije \textbf{$k$-podela}
+\end{definition}
+
+\begin{definition}
+	\textbf{Kompozicija} broja $n$ je bilo koja uređena podela, tj. podela kod koje je poredak bitan.
+\end{definition}
+
+\begin{definition}
+	\textbf{Particija} broja $n$ je bilo koja neuređena podela, tj. podela kod koje poredak sabiraka nije bitan.
+\end{definition}
+\begin{example}
+	Particije i kompozicije broja $n=4$ su:
+	\begin{align*}
+		\begin{gathered}
+			\text{Kompozicije:}\\
+			4\\
+			1+3,\;3+1,\;2+2\\
+			1+1+2,\;1+2+1,\;2+1+1\\
+			1+1+1+1\\
+		\end{gathered}
+		\quad \quad \quad
+		\begin{gathered}
+			\text{Particije:}\\
+			4\\
+			1+3,\;2+2\\
+			1+1+2\\
+			1+1+1+1\\
+		\end{gathered}
+	\end{align*}
+\end{example}
+
+\begin{example}
+	Kompozicije broja $n=7$ koje imaju $k=4$ sabiraka mogu se prebrojati pomoću crtica i kružića. Zamislimo 7 kružića i između njih 6 polja, ako u neko polje stavimo crticu to je kao da smo stavili plus na to mesto. Samim tim, pošto želimo da odredimo broj kompozicija za 4 sabirka stavljam 3 crtice. Broj načina na koje ovo može da se uradi je jednak odabiru 3 mesta od 6.
+\end{example}
+
+\begin{theorem}
+	\begin{enumerate}
+		\item
+			Broj kompozicija broja $n$ koje imaju $k$ sabiraka je $\binom{n-1}{k-1}$
+		\item
+			Uupan broj svih kompozicija broja $n$ je $2^{n-1}$
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}
+		\item
+			Postoji $n$ kružića $\implies$ postoji $(n-1)$ mesta na koja mogu da se stave crtice, kojih ima $(k-1)$. Samim tim ukupan broj mogućnosti je $\binom{n-1}{k-1}$ 
+		\item
+			Ukupan broj kompozicija se može dobiti na dva načina:
+			\begin{enumerate}[label = \alph*)]
+				\item 
+					U svakom polju može da se pojavi crtica, ili ne mora, samim tim imamo 2 mogućnosti za svako polje (kojih ima $(n-1)$) pa je ukupan broj kompozicija $2^{(n-1)}$
+				\item
+					Ukupan broj kompozicija je $\sum_{k=1}{n} \binom{n-1}{k-1} = \sum_{i=0}{n-1} = 2^{n-1}$
+			\end{enumerate}
+	\end{enumerate}
+\end{proof}

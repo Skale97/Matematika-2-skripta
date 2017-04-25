@@ -1,0 +1,225 @@
+\section{Diferencijalne jednačine}
+- Principijalno ne znamo da ih rešavamo\\
+- Neke i možemo da rešimo (obratiti pažnju na klasifikaciju)
+\subsection{Obične diferencijalne jednačine}
+\begin{definition}
+	Implicitan izraz $f(x,y,y',\ldots,y^{(n)})=0$ gde je $y:(a,b)\to \mathbb{R}$ nepoznata, $n$ puta diferencijabilna funkcija nezavisno promenljive $x$, naziva se \textbf{obična diferencijabilna jednačina} reda $n$ ako u njoj efektivno učestvuje izvod $y^{(n)}$.\\
+	\textbf{Napomena:} nije obavezno pojavljivanje svih članova, ali je obavezno pojavljivanje $n$-tog izvoda.
+\end{definition}
+\begin{definition}
+	\textbf{Rešenje} diferencijalne jednačine na intervalu $I$ je svaka funkcija $y$ definisana na $I$ koja jednačinu svodi na identitet.\\
+	\textbf{Napomena (Manjkavost? ostaviti ili ne?):} Ne može rešenje jednačine uvek da se predstavi u eksplicitnom obliku
+\end{definition}
+\begin{definition}
+	\textbf{Opšte rešenje} diferencijalne jednačine $n$-tog reda je svaka funkcija $y$ definisana sa $G(x,y,c_1,c_2,\ldots,c_n)$ gde su $c_1,c_2,\ldots,c_n$ proizvoljne konstante iz $\overline{\mathbb{R}}$, tako da:
+	\begin{enumerate}[label=\arabic*)]
+		\item
+			$y$ jeste rešenje jednačine
+		\item
+			Polazna jednačine se može dobiti iz izraza $G$
+	\end{enumerate}
+	\textbf{Napomena:} Opšte rešenje ne sadrži sva rešenja diferencijalne jednačine
+\end{definition}
+\begin{definition}
+	\textbf{Partikularno rešenje} diferencijalne jednačine $n$-tog reda je svako njeno rešenje koje je obuhvaćeno opštim rešenjem, tj. koje se može dobiti iz opšteg rešenja za neke konkretne vrednosti konstanti.
+\end{definition}
+\begin{definition}
+	\textbf{Singularno rešenje} diferencijalne jednačine $n$-tog reda je svako rešenje koje nije obuhvaćeno opštim rešenjem.
+\end{definition}
+\begin{definition}
+	Partikularno rešenje diferencijalne jednačine $n$-tog reda određeno uslovima:
+	$$\left.
+	\begin{aligned}
+		y(x_0) &= y_0\\
+		y'(x_0) &= y_1\\
+		\vdots\\
+		y^{(n-1)}(x_0) &= y_{n-1}\\
+		y^{(n)}(x_0) &= y_n
+	\end{aligned}
+	\right\} \text{Košijevi (početni) uslovi}
+	$$
+	naziva se \textbf{Košijevo rešenje} diferencijalne jednačine za početne uslove.\\
+	\textbf{Napomena:} Ovaj problem drugačije se naziva Košijev problem ili problem početnih uslova. Rešava se $n$ jednačina ($n$ uslova) sa $n$ nepoznatih ($n$ konstanti). Ukoliko je problem korektno zadat onda ima jedinstveno rešenje.
+\end{definition}
+
+
+\subsection{Diferencijalne jednačine prvog reda}
+
+
+\subsubsection{Diferencijalne jednačina kod kod kojih promenljive mogu da se razdvoje}
+\textbf{Opšti izraz:}
+\begin{gather*}
+	f(x)\, \mathrm{d}x +g(y)\, \mathrm{d}y = 0\\
+	y' = \varphi(x)\xi(y)
+\end{gather*}
+gde su funkcije $f$, $g$, $\varphi$ i $\xi$ definisane i neprekidne na nekom intervalu $I$ na kom se traži rešenje ove jednačine.
+\textbf{Opšte rešenje:}
+$$\int f(x) \, \mathrm{d}x + \int g(y) \, \mathrm{d}y = c$$
+\textbf{Partikularno rešenje Košijevog problema:}
+$$\int \limits^x_{x_0} f(x) \, \mathrm{d}x +\int \limits^y_{y_0} g(y) \, \mathrm{d}y = 0$$
+\textbf{Napomena:} Na kraju rešavanja broj konstanti mora biti jednak redu diferencijalne jednačine.
+
+
+\subsubsection{Diferencijalne jednačine oblika $y'=g(ax+by)$}
+\textbf{Opšti izraz:}
+$$y'=g(ax+by)$$
+gde su funkcije $y$ i $g$ definisane i neprekidne na nekom intervalu $I$ na kom se traži rešenje ove jednačine.
+\textbf{Opšte rešenje:}
+\begin{enumerate}[label = \alph*)]
+	\item
+		$b=0 \implies$ ovo je jednačina kod koje promenljive mogu da se razdvoje
+	\item
+		$b \centernot = 0 \implies$ u ovoj jednačini se uvodi smena zavisno promenljive $y$:
+		\begin{align*}
+			\begin{aligned}[c]
+				ax+by=z\\
+				by = z-ax\\
+				y = \frac{z-ax}{b}\\
+				y' = \frac{z'-a}{b}\\	
+				y' = g(z)\\	
+			\end{aligned}
+			\quad \quad
+			\begin{aligned}[c]
+				\frac{z'-a}{b} = g(z)\\
+				z' = bg(z)+a\\
+				\frac{\mathrm{d}z}{\mathrm{d}x} = bg(z)+a\\
+				\mathrm{d}x = \frac{\mathrm{d}z}{bg(z)+a}\\
+				\int\frac{\mathrm{d}z}{bg(z)+a} = \int \mathrm{d}x + c\\
+			\end{aligned}\\		
+		\end{align*}
+		$$\underbrace{\int\frac{\mathrm{d}z}{bg(z)+a} = x + c}_{\text{Rešavanjem dobija se opšte rešenje}}$$
+\end{enumerate}
+
+\subsubsection{Homogena diferencijalna jednačina prvog reda}
+\textbf{Opšti izraz:}
+$$y' = f\left(\frac{y}{x}\right)$$
+gde je funkcija $f$ definisana na intervalu $I$ na kom se traži rešenje ove jednačine. I $f(u)\centernot \equiv u \implies$ nije identičko preslikavanje\\
+\textbf{Opšte rešenje:}
+\begin{align*}
+	\begin{aligned}[c]
+		z = \frac{y}{x}\\
+		y = xz\\
+		y' = z+z'x\\
+		y' = f\left(\frac{y}{x}\right)\\
+	\end{aligned}
+	\quad \quad
+	\begin{aligned}[c]
+		z'x+z = f(z)\\
+		\frac{\mathrm{d}z}{\mathrm{d}x}x = f(z)-z\\
+		\frac{\mathrm{d}z}{f(z)-z} = \frac{\mathrm{d}x}{x}\\
+		\int \frac{\mathrm{d}z}{f(z)-z} = \int \frac{\mathrm{d}x}{x}+c\\
+	\end{aligned}\\	
+\end{align*}
+$$\underbrace{\int \frac{\mathrm{d}z}{f(z)-z} = \ln|x|+c}_{\text{Rešavanjem dobija se opšte rešenje}}$$
+
+
+\subsubsection{Diferencijalna jednačina prvog reda oblika $y' = f\left(\frac{a_1x+b_1y+c_1}{a_2x+b_2y+c_2}\right)$}
+\textbf{Opšti izraz:}
+$$y' = f\left(\frac{a_1x+b_1y+c_1}{a_2x+b_2y+c_2}\right)$$
+gde je funkcija $f$ definisana i neprekidna na nekom intervalu $I$ na kom se traži rešenje ove jednačine
+\textbf{Opšte rešenje:}
+\begin{enumerate}[label = \alph*)]
+	\item
+		$a_1 = a_2 = b_1 = b_2 = 0$ - Nije poželjno da istovremeno budu jednake nuli.
+	\item
+		$a_1=a_2=0 \lor b_1=b_2=0 \lor a_1=b_2=0 \lor b_1=a_2=0 \implies$ Diferencijalna jednačina kod koje promenljive mogu da se razdvoje.
+	\item
+		$c_1=c_2=0 \implies$ Homogena diferencijalna jednačina.
+	\item
+		$\left|
+		\begin{matrix}
+			a_1 & b_1\\
+			a_2 & b_2
+		\end{matrix}
+		\right| = 0 \implies \frac{a_1}{a_2}=\frac{b_1}{b_2}\implies$ Koeficijenti $ a_1$, $a_2$, $b_1$ i $b_2$ su proporcionalni $\implies$ uvođenjem smene $a_1x+b_1y=z$ svodi se na diferencijalnu jednačinu oblika $y'=g(a_1x+b_1y)$ koju znamo da rešimo.
+	\item
+		$\left|
+		\begin{matrix}
+			a_1 & b_1\\
+			a_2 & b_2
+		\end{matrix}
+		\right| \centernot = 0 \implies \frac{a_1}{a_2}\centernot=\frac{b_1}{b_2}\implies$Koeficijenti $ a_1$, $a_2$, $b_1$ i $b_2$ nisu proporcionalni $\implies$ smetaju $c_1$ i $c_2$, pa se uvode dve smene:
+		\begin{enumerate}[label = \arabic*)]
+			\item
+				smena nezavisno promenljive $x=u+\alpha$
+			\item
+				smena zavisno promenljive $y=v+\beta$		
+		\end{enumerate}				
+		gde su $\alpha$ i $\beta$ konstante, rešenja sistema linearnih jednačina:
+		$$\left.
+		\begin{aligned}
+			a_1\alpha+b_1\beta +c_1=0\\
+			a_2\alpha+b_2\beta +c_2=0
+		\end{aligned}
+		\right\}a_i,\, b_i,\, c_i \text{ su koeficijenti iz polazne jednačine}$$
+		$\det \centernot = 0\implies$ sistem ima jedinstven rešenje
+		$\alpha, \beta$ daju nove promenljive i jednačina se svodi na homogenu diferencijalnu jednačinu prvog reda.
+\end{enumerate}
+
+\subsubsection{Linearna diferencijalna jednačina prvog reda}
+\textbf{Opšti izraz:}
+$$y'+P(x)y=Q(x)$$
+gde su $P$ i $Q$ funkcije definisane i neprekidne na nekom intervalu $I$ na kom se traži rešenje ove jednačine
+\textbf{Opšte rešenje:}
+\begin{enumerate}[label = \alph*)]
+	\item 
+		Homogena\\
+		$Q(x) = 0 \implies$ promenljive mogu da se razdvoje
+		\begin{align*}
+			\begin{aligned}[c]
+				-P(x)y=y'\\
+				\frac{\mathrm{d}y}{y} = -P(x)\,\mathrm{d}x\\
+			\end{aligned}
+			\quad \quad
+			\begin{aligned}[c]
+				\int \frac{\mathrm{d}y}{y} = - \int P(x)\,\mathrm{d}x+c\\
+				\ln|y| = -\int P(x)\mathrm{d}x+\ln c\\	
+			\end{aligned}
+		\end{align*}
+		$$y = ce^{-\int P(x) \mathrm{d}x}$$
+	\item
+		Nehomogena\\
+		\begin{align*}
+			\begin{aligned}[c]
+				y'+P(x)y=Q(x)\\
+				y'e^{\int P(x)\mathrm{d}x} + yP(x)e^{\int P(x)\mathrm{d}x} = Q(x)e^{\int P(x)\mathrm{d}x}\\
+				\left(ye^{\int P(x)\mathrm{d}x}\right)'=Q(x)e^{\int P(x)\mathrm{d}x}
+			\end{aligned}
+			\quad \quad
+			\begin{aligned}[c]
+				\int\left(ye^{\int P(x)\mathrm{d}x}\right)'=\int Q(x)e^{\int P(x)\mathrm{d}x}\\
+				ye^{\int P(x)\mathrm{d}x} = \int Q(x)e^{\int P(x)\mathrm{d}x}\,\mathrm{d}x +c\\
+			\end{aligned}
+		\end{align*}
+		$$y = e^{-\int P(x)\mathrm{d}x}\left(c+ \int Q(x)e^{\int P(x)\mathrm{d}x} \,\mathrm{d}x \right)$$
+		Košijev problem, opšte rešenje za linearnu nehomogenu diferencijalnu jednačinu prvog reda:
+		$$y = e^{-\int\limits^x_{x_0} P(x)\mathrm{d}x}\left(y_0+ \int\limits^x_{x_0} Q(x)e^{\int\limits^x_{x_0} P(x)\mathrm{d}x} \, \mathrm{d}x \right)$$
+\end{enumerate}
+
+\subsubsection{Bernulijeva diferencijalna jednačina}
+\textbf{Opšti izraz:}
+$$y'+P(x)y=Q(x)y^m$$
+gde je $m \in \mathbb{R}\setminus \{0,1\}$, funkcije $P$ i $Q$ definisane i neprekidne na nekom intervalu $I$ na kom se rešava jednačina.\\
+\textbf{Opšte rešenje:}
+\begin{align*}
+	\begin{aligned}[c]
+		z = y^{1-m}\\
+		z' = (1-m)y^{-m}y'\\
+		y'+P(x)y=Q(x)y^m
+	\end{aligned}
+	\quad \quad
+	\begin{aligned}[c]
+		\frac{y'}{y^m}+P(x)y^{1-m}=Q(x)\\
+		(1-m)y^{-m}y' + P(x)y^{1-m}=(1-m)Q(x)
+	\end{aligned}
+\end{align*}
+$$z'+z\underbrace{P(x)}_{P_1(x)}=\underbrace{(1-m)Q(x)}_{Q_1(x)}$$ - linearna diferencijalna jednačina prvog reda
+
+\subsubsection{Rikatijeva jednačina}
+\textbf{Opšti izraz:}
+$$y' = P(x)(y')^2+Q(x)y+R(x)$$
+gde su funkcije $P$, $Q$ i $R$ definisane i neprekidne na nekom intervalu $I$ na kom se rešava jednačina.\\
+\textbf{Opšte rešenje:}
+Izaberimo takvu smenu da uklonimo $R(x)$ i dobijamo Bernulijevu diferencijalnu jednačinu za $m=2$\\
+$y^2 \implies m= 2 \implies$ potrebno nam je jedno partikularno rešenje, od toga polazimo $(y_p)$\\
+$y=y_p+\frac{1}{z} \implies$ smena zavisno promenljive\\

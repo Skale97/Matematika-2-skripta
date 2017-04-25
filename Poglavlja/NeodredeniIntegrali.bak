@@ -1,0 +1,333 @@
+
+\section{Opšta algebra} 
+\subsection{Uvod} 
+
+\begin{definition}
+	Neka je data neka funkcija $f$ koja je definisana na nekom intervalu $I = (a, b) \quad a,b\in \overline{\mathbb{R}}$. Ako postoji $F(x)$ koja je definisana na $I$ i za koju važi $$(\forall x \in I)\; F'(x) = f(x)$$ tada kažemo da je $F(x)$ \textbf{primitivna funkcija} funkcije $f(x)$ na $I$
+\end{definition}
+
+\begin{example}
+	\begin{tabular}{l l l}
+		$\textbf{f(x)}$	& $\textbf{I}$		& $\textbf{F(x)}$			\\
+		\hline
+		$f(x) = 2x$		& $I=(-5, 7)$		& $F(x)=x^2+\frac{3}{5}$	\\
+		                & $I=(-\inf,3)$		& $F(x)=x^2+c; \; c\in\mathbb{R}$\\	
+		\hline
+		$f(x) = \cos x$	& $I=(-\pi, \pi)$	& $F(x) = \sin x + c$\\
+		                & $I=(-\inf, \inf)$	& \\
+	\end{tabular}
+\end{example}
+
+\begin{definition}
+	Skup svih primitivnih funkcija funkcije $f$ na intervalu $I$ zove se \textbf{neodređeni integral} funkcije $f$ na intervalu $I$. Oznaka:
+	$$ \int f(x)dx; \quad \int f(x)dx= \{F(x)+c\;|\;c\in\mathbb{R}\}$$
+	Po dogovoru: $\int f(x)dx = F(x)+c; \quad c \in \mathbb{R}$ 
+\end{definition}
+
+
+\begin{theorem}
+	Ako je $F(x)$ primitivna funkcija funkcije $f$ na intervalu $I$, tada je i $F(x)+c; \quad c \in \mathbb{R}$ takođe primitivna funkcija funkcije $f$ na intervalu $I$.
+\end{theorem}
+
+\begin{proof}
+	$$(\forall x \in I)(F(x)+c)' = F'(x) = f(x)$$
+\end{proof}
+
+
+\begin{theorem}
+	Ako su $F_{1}(x)$ i $F_{2}(x)$ neke dve primitivne funkcije funkcije $f$ na intervalu $I$, tada:
+	$$(\exists c \in \mathbb{R})(\forall x \in I)\;F_{1}(x)-F_{2}(x) = c$$
+\end{theorem}
+
+\begin{proof}
+	\begin{align*}
+		&\varphi (x) = F_{1}(x) - F_{2}(x)\\
+		&\varphi'(x) = F_{1}'(x) - F_{2}'(x) = f(x)-f(x) = 0\\
+		&(\forall x \in \mathbb{R}) \;\varphi'(x) = 0 \implies \varphi(x) = c\
+	\end{align*}
+	* Teorema iz diferencijalnog računa $(\exists c \in \mathbb{R})(\varphi(x) = c) $
+\end{proof}
+
+
+\begin{theorem}
+	Ako je funkcija neprekidna na intervalu $I$ tada ona ima primitivnu funkciju.\\
+	* važan je interval $I$ na kom se sve dešava	
+\end{theorem}
+
+\begin{example}
+	\begin{tabular}{l l l}
+		$\textbf{f(x)}$	& $\textbf{I}$		& $\textbf{F(x)}$			\\
+		\hline
+		$f(x) = \frac{1}{x}$ & $x>0\quad I=(0, \inf)$ & $F(x) = \ln x + c$ \\
+		$D = \mathbb{R}\setminus \{0\}$ & $x<0\quad I = (-\inf, 0)$ & $F(x)= \ln(-x)+c$\\
+		& & $\int \frac{1}{x} dx = \ln |x| + c$ \\
+		\hline
+		$f(x) = \frac{1}{1+x^2}$ & $I = (-\inf, +\inf)$ & $F(x) = \arctan x + c$ \\
+		& & $F(x) = -\arctan x c$ \\
+		\hline
+		$f(x) = \frac{1}{1+x^2}$ & $I = (-\inf, +\inf) \setminus \{0\}$ & $F(x) = \arcctg\frac{1}{x}$
+	\end{tabular}
+\end{example}
+
+\begin{theorem}
+	Neka funkcija $f$ ima primitivnu funkcije na intervalu $I$, i neka je\\ $\int f(x)dx = F(x) + c; \quad c \in \mathbb{R}$:
+	\begin{enumerate}
+		\item $d\left(\int f(x)dx\right) = f(x)dx$
+		\begin{proof}
+			$$d\left(\int f(x)dx\right) = d(F(x) + c) = dF(x) = F'(x)dx = f(x)dx$$
+		\end{proof}
+		
+		\item $\frac{d\left(\int f(x)dx\right)}{dx} = f(x)$
+		\begin{proof}
+			$$\left(\int f(x)dx\right)' = f(x)$$
+		\end{proof}
+		
+		\item $\int dF(x) = F(x) + c$
+		\begin{proof}
+			$$\int dF(x) = \int F'(x)dx = \int f(x) dx = F(x) + c$$
+		\end{proof}
+	\end{enumerate}
+\end{theorem}
+
+\subsection{Osnovni metodi integracije}
+
+\begin{enumerate}[label = \textbf{\arabic*.}]
+	\item \textbf{Tablica}\\
+	Tablica neodređenih integrala
+	\begin{enumerate}[label = \arabic*)]
+		\item $\int x^ndx = \frac{x^{n+1}}{n+1}+c; \quad n \centernot = -1$
+		\item $\int \frac{1}{x}dx = \ln |x| + c; \quad x \centernot = 0$
+		\item $\int a^x dx = \frac{a^x}{\ln a} + c; \quad a>0, a \centernot = 1$
+		\item $\int e^x dx = e^x + c$
+		\item $\int \frac{dx}{1+x^2} = \arctg x + c = - \arcctg x + c_1$
+		\item $\int \frac{dx}{\sqrt{1 - x^2}} ) \arcsin x + c = - \arccos x + c_1; \quad (|x| < 1)$
+		\item $\int \frac{dx}{\sqrt{x^2 \pm 1}} = \ln |x+\sqrt{x^2 \pm 1}| + c = 
+		\begin{cases}
+			\arsh x + c \quad za \; +\\
+			\arch x + c \quad za - i \; x > 1
+		\end{cases}$
+		\item $\int \frac{dx}{1-x^2} = \frac{1}{2}\ln \left | \frac{1 + x}{1 - x} \right | + c = 
+		\begin{cases}
+			\arth x + c &\quad za |x|<1\\
+			\arcth x + c &\quad za |x|> 1
+		\end{cases}$
+		\item $\int \sin x dx = - \cos x + c$
+		\item $\int \cos x dx = \sin x + c$
+		\item $\int \frac{dx}{\cos^2 x} = \tg x + c$
+		\item $\int \frac{dx}{\sin^2 x} = - \ctg x + c$
+		\item $\int \sh x dx = \ch x + c$
+		\item $\int \ch x dx = \sh x + c$
+		\item $\int \frac{dx}{\ch^2 x} = \th x + c$
+		\item $\int \frac{dx}{\sh^2 x} = -\cth x + c$
+	\end{enumerate}
+	Smenom izvedeni neodređeni integrali
+	\begin{enumerate}[label = \arabic*)]
+		\item $\int \frac{dx}{\sqrt{x^2 \pm a}} = \ln |x + \sqrt{x^2 \pm a}| + c$
+		\item $\int \frac{dx}{\sqrt{a^2 - x^2}} = \arcsin \frac{x}{a} + c$
+		\item $\int \frac{dx}{x^2+a^2} = \frac{1}{a}\arctan\frac{x}{a} + c$
+		\item $\int \frac{dx}{x^2-a^2} = \frac{1}{2a}\ln\left | \frac{x-a}{x+a} \right | + c$
+		\item $\int \frac{dx}{a^2 - x^2} = \frac{1}{2a} \ln \left | \frac{a+x}{a-x} \right | + c$
+	\end{enumerate}
+	
+	\item \textbf{Korišćenjem teoreme o linearnosti integrala}
+	\begin{theorem}
+		Ako funkcije $f$ i $g$ imaju primitivne funkcije na intervalu $I$, i ako su $\alpha, \beta \in \mathbb{R}$, tada važi sledeće (na intervalu $I$):
+		$$\int (\alpha f(x)+\beta g(x)) dx = \alpha \int f(x)dx + \beta \int g(x)dx + c$$
+	\end{theorem}
+	\begin{proof}
+		\begin{align*}
+		&(\forall x \in I) \left(\int (\alpha f(x) + \beta g(x)\right)' dx = \alpha f(x) + \beta g(x) \\
+		&(\forall x \in I) \left(\alpha \int f(x)dx + \beta \int g(x)dx)' = \alpha(\int f(x)dx\right)' + \beta \left(\int g(x)dx\right)' = \alpha f(x) + \beta g(x)\\
+		&\int (\alpha f(x)+\beta g(x)) dx = \alpha \int f(x)dx + \beta \int g(x)dx + c\\
+		\end{align*}
+	\end{proof}
+	
+	\begin{example}
+		\begin{align*}
+			&\int (\cos x - \frac{c}{5} \sqrt{x \sqrt{x \sqrt{x}}} - \frac{4}{\sqrt{1-x^2}}+2^x = \\
+			&= \sin x - c_1 + \frac{2^x}{\ln 2} + c_4 - 4\arcsin x + c_3 - \frac{3}{5} \int x^\frac{1}{2}	x^\frac{1}{4} x^\frac{1}{8} dx = \\
+			&= \sin x + \frac{2^x}{\ln 2} - 4 \arcsin x + c_1 + c_2 + c_3 - \frac{3}{5} \int x^\frac{7}{8} dx = \\
+			&= \sin x + \frac{2^x}{\ln 2} - 4 \arcsin x - \frac{8}{25}x^\frac{15}{8}+c_1+c_2+c_3+c_4 = \\
+			&= \sin x + \frac{2^x}{\ln 2} - 4 \arcsin x - \frac{8}{25}x^\frac{15}{8}+c \\
+		\end{align*}
+	\end{example}		
+	
+	\item \textbf{Metod smene promenljive}
+	\begin{theorem}
+		Neka je data funkcija $f$ koja je neprekidna na intervalu $I$. Neka je $x = \varphi (t)$, pri čemu funkcija $\varphi : I_1 \to I$ (gde je $I_1$ interval) i neka su funkcije $\varphi$ i $\varphi'$ neprekidne na intervalu $I_1$ i $(\forall t \in I_1) \varphi' (t) \centernot = 0$. Tada je $f(x) dx = \int f(\varphi (t)) \varphi'(t)dt$, smena $x = \varphi(t); \; dx = \varphi'(t)dt$
+	\end{theorem}
+	\begin{proof}
+		\begin{align*}
+			&\left(\int f(x)dx \right)' = f(x)\\
+			&x = \varphi(t)\\
+			&dx = \varphi'(t)dt\\
+			&\left(\int f(\varphi (t))\varphi ' (t) dt\right)' = \\
+			&=\frac{d\left(\int f(\varphi (t))\varphi'(t)dt\right)}{dx} = \\
+			&=\frac{d\left(\int f(\varphi (t))\varphi'(t)dt\right)}{dx}\frac{dx}{dt}\frac{dt}{dx} = \\
+			&=f(\varphi (t))\varphi'(t)\frac{1}{\varphi'(t)} = \\
+			&=f(\varphi(t)) = f(x)\\
+		\end{align*}
+	\end{proof}
+	
+	\begin{corollary}
+		\begin{enumerate}[label = \arabic*)]
+			\item 
+				Poznato je $\int f(x)dx = F(x) + c$\\
+				Traži se $\int f(\varphi (t))\varphi'(t)dt$\\
+				$x = \varphi(t)$\\
+				$\int f(\varphi(t))\varphi'(t)dt = F(\varphi(t)+c$
+			\item 
+				Poznato je $\int f(\varphi(t))\varphi'(t)dt = G(t) + c_1$\\			
+				Traži se $\int f(x)dx$\\
+				$x = \varphi(t)$\\
+				$t = \varphi^{-1}(x)$\\
+				$\int f(x)dx = G(\varphi^{-1}(x))+c$
+		\end{enumerate}
+	\end{corollary}
+	
+	\begin{example}
+		\begin{enumerate}[label = \arabic*)]
+			\item $
+				\int \frac{e^x}{\sqrt{e^x + 1}} = 
+				\left[
+				\begin{aligned}
+					t &= e^x + 1\\
+					dt &= e^x
+				\end{aligned}
+				\right] 
+				\int \frac{1}{\sqrt{t}}dt = \frac{\sqrt{t}}{\frac{1}{2}} + c = 2\sqrt{t}+c = 2\sqrt{e^x+1}+c$
+			\item 
+				\begin{multline*}
+					\int \sqrt{a^2 - x^2}dx = 
+					\left[
+					\begin{aligned}
+						a &\centernot = 0\\
+						x &= a \sin t\\
+						x &= \varphi(t)\\
+						t &= \arcsin \frac{x}{a}\\
+						dx &= a \cos t dt\\
+					\end{aligned}
+					\right] 
+					= \int \sqrt{a^2-a^2 \sin^2 t} a \cos t dt 
+					= |a|\int a \cos t dt  
+					= a\int |a| cos^2t dt \\ 
+					= a|a|\int\frac{1+\cos 2t}{2}dt 
+					= a|a|\left (\int \frac{1}{2}dt + \frac{1}{2}\int \cos 2tdt\right ) 
+					= a|a|\left [\frac{t}{2} + \frac{\sin 2t}{4} \right ] \\
+					= a|a|\left [\frac{\arcsin \frac{x}{a}}{2} + \frac{1}{2}2\sin t \cos t \right ] + c 
+					= a|a|\left [\arcsin \frac{\arcsin \frac{x}{a}}{2}+\frac{1}{4}\frac{x}{a}\sqrt{1-\frac{x^2}{a^2}}\right ] + c
+				\end{multline*}
+				* Dogovor: U neodređenom integralu sklanja se apsolutna zagrada
+				\item$
+				\int \frac{dx}{x^2+a^2} = \frac{1}{a^2} \int \frac{dx}{1+\left(\frac{x}{a}\right)^2} = 
+				\left[
+				\begin{aligned}
+					\frac{x}{a} &= t\\
+					dx &= a dt
+				\end{aligned}
+				\right] 
+				\frac{1}{a^2}\int \frac{a dt}{t^2+1} = \frac{1}{a}\arctg t + c = \frac{1}{a} \arctg\frac{x}{a} + c$ 
+				\item * Teorija na ispitu: Da li se neodređenom integralu $\int \frac{dxx}{\sqrt{x^2-4}}$ na $I = (2, +\inf)$ može uvesti smena $x = \arcsin t$?
+					\begin{align*}
+						x = \arcsin t  &\quad x \in (2, +\inf)\\
+						x = \varphi(t) &\quad t \in (-1, 1)\\
+						x = \varphi(t) &= \arcsin t \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)\\
+					\end{align*}
+					Ne može se uvesti smena $x = \arcsin t$.
+		\end{enumerate}
+	\end{example}
+	
+	\item \textbf{Svođenje kvadratnog trinoma na kanonski oblik}
+		\begin{align*}
+			ax^2+bx+c = a\left(x^2+\frac{b}{a}x+\frac{c}{a}\right) &= a\left(x^2 + \frac{2b}{2a}x + \left(\frac{b}{2a}\right)^2 - \left(\frac{b}{2a}\right)^2 + \frac{c}{a}\right) =\\
+			&= a\left(\left(x+\frac{b}{2a}\right)^2-\frac{b^2}{4a^2}+\frac{c}{a}\right) =\\
+			&= a\left(x+\frac{b}{2a})^2 + \frac{4ac-b^2}{4a}\right)\\
+			&\text{smena: } x+\frac{b}{2a} = t
+		\end{align*}
+		Opšti slučaj:
+		\begin{enumerate}[label = \arabic*)]
+			\item $\int \frac{dx}{ax^2+bx+c}$
+			\item $\int \frac{Mx+N}{ax^2+bx+c}$
+			\item $\int \sqrt{ax^2+bx+c}dx$
+			\item $\int \frac{dx}{\sqrt{ax^2+bx+c}}$
+			\item $\int \frac{Mx+N}{\sqrt{ax^2+bx+c}}$
+		\end{enumerate}
+	
+	\item \textbf{Parcijalna integracija}
+		\begin{theorem}
+			Neka su funkcije $u(x)$ i $v(x)$ diferencijabilne na intervalu $I$, tada važi:
+			$$\int u(x)dv(x) = u(x)v(x)-\int v(x)du(x) + c$$
+		\end{theorem}
+		\begin{proof}
+			\begin{align*}
+				&d(u(x)v(x))=du(x)v(x)+u(x)dv(x) \\
+				&\int d(u(x)v(x)) = \int du(x)v(x)+ \int u(x)dv(x)\\
+				&u(x)v(x) - \int v(x)du(x) = \int u(x)dv(x)
+			\end{align*}
+		\end{proof}
+		\begin{example}
+			\begin{enumerate}[label = \arabic*)]
+				\item$
+					\int \ln x dx =
+					\left[
+					\begin{aligned}
+						u(x) = \ln x &\quad du = \frac{1}{x}dx\\
+						dv(x) = dx &\quad v = x
+					\end{aligned}
+					\right]=
+					 x \ln x - \int \frac{xdx}{x} = x \ln x-x+c$\\
+				\item 
+					\begin{multline*}
+						\int \sqrt{a^2-x^2}dx = 
+						\left[
+						\begin{aligned}
+							u(x) = \sqrt{a^2-x^2} &\quad du = \frac{-2x}{2\sqrt{a^2-x^2}}dx\\
+							dv(x) = dx &\quad v = x
+						\end{aligned}
+						\right]=
+						x\sqrt{a^2-x^2}+\int \frac{x2x}{2\sqrt{a^2-x^2}}dx =\\
+						= x\sqrt{a^2-x^2}+\int \frac{x^2}{\sqrt{a^2-x^2}}dx
+					\end{multline*}
+				\item
+					\begin{multline*}				
+				 		\int \frac{x^2}{(1+x^2)^2}dx = \int \frac{x}{(1+x^2)^2}xdx= 
+						\left[
+						\begin{aligned}
+							u(x) = x &\quad du = dx\\
+							dv(x) = \int \frac{x}{(1+x^2)^2}dx = \frac{-1}{2(1+x^2)} &\quad v = x
+						\end{aligned}
+						\right]=\\
+						=
+						\frac{-x}{2(1+x^2)}+\frac{1}{2}\int \frac{1}{1+x^2}dx = \frac{-x}{2(1+x^2} + \frac{1}{2}\arctg x + c
+					\end{multline*}
+			\end{enumerate}
+		\end{example}
+	\item \textbf{Metod rekurentnih formula}
+		\begin{align*}
+			I(n) &= \int f(x, n)dx\\
+			I(n-1) &= \int f(x, n-1)dx\\
+			I(n-2) &= \int f(x, n-2)dx\\
+		\end{align*}
+		\begin{example}
+			\begin{align*}
+				I(n) &= \int \frac{1}{(1+x^2)^n}dx\\
+				n=1\; I(n) &= \int \frac{1}{1+x^2}dx = \arctg x + c\\
+				n=2\; I(n) &= ?\\
+				n=3\; I(n) &= ?\\
+				\\
+				I(n) &= \int \frac{1+x^2-x^2}{(1+x^2)^n}dx =\\
+				&=\int \frac{dx}{(1+x^2)^{n-1}}-\int \frac{xx}{(1+x^2)^n}dx =\\
+				&= \left[
+				\begin{aligned}
+					u(x) = x &\quad du = dx\\
+					dv(x) = \frac{x}{(1+x^2)^n}dx &\quad v = \int \frac{x}{(1+x^2)^n}dx = \frac{1}{2(1-n)}\frac{1}{(1+x^2)^{n-1}}			
+				\end{aligned}
+				\right]=\\
+				&= \frac{-x}{(1+x^2)^{n-1}}\frac{1}{2(1-n)}+\frac{1}{2(1-n)}\underbrace{\int \frac{1}{(1+x^2)^{n-1}}dx}_{I(n-1)} + \underbrace{\int \frac{1}{(1+x^2)^{n-1}}dx}_{I(n-1)} =\\
+				I(n) &= I(n-1)\left( 1+\frac{1}{2(1-n)}\right) - \frac{x}{2(1-n)(1+x^2)^{n-1}}\\
+				n=1\; I(1) &= \arctg x +c\\
+				n=2\; I(2) &= \arctg x\left(1+\frac{1}{2(1-2)}\right)-\frac{x}{2(1-2)(1+x^2)^{1-2}} = \frac{-\arctg x}{2} + \frac{x(1+x^2)}{2} +c
+			\end{align*}
+		\end{example}
+	\item \textbf{Metod neodređenih koeficijenata}
+\end{enumerate}
