@@ -1,38 +1,59 @@
 \select@language {serbian}
-\contentsline {section}{\numberline {1}Neodre\IeC {\dj }eni integrali}{2}
-\contentsline {subsection}{\numberline {1.1}Uvod}{2}
-\contentsline {subsection}{\numberline {1.2}Osnovni metodi integracije}{3}
-\contentsline {subsubsection}{\numberline {1.2.1}Tablica}{3}
-\contentsline {subsubsection}{\numberline {1.2.2}Kori\IeC {\v s}\IeC {\'c}enjem teoreme o linearnosti integrala}{4}
-\contentsline {subsubsection}{\numberline {1.2.3}Metod smene promenljive}{4}
-\contentsline {subsubsection}{\numberline {1.2.4}Svo\IeC {\dj }enje kvadratnog trinoma na kanonski oblik}{5}
-\contentsline {subsubsection}{\numberline {1.2.5}Parcijalna integracija}{5}
-\contentsline {subsubsection}{\numberline {1.2.6}Metod rekurentnih formula}{5}
-\contentsline {subsubsection}{\numberline {1.2.7}Metod neodre\IeC {\dj }enih koeficijenata}{6}
-\contentsline {subsection}{\numberline {1.3}Posebne metode integracije}{7}
-\contentsline {subsubsection}{\numberline {1.3.1}Integracija racionalnih funkcija}{7}
-\contentsline {subsubsection}{\numberline {1.3.2}Integracija nekih iracionalnih funkcija}{7}
-\contentsline {subsubsection}{\numberline {1.3.3}Integracija trigonometrijskih funkcija}{8}
-\contentsline {section}{\numberline {2}Odre\IeC {\dj }eni integrali}{9}
-\contentsline {subsection}{\numberline {2.1}Uvod}{9}
-\contentsline {subsection}{\numberline {2.2}Potrebni i dovoljni uslovi za integrabilnost funkcija}{9}
-\contentsline {subsection}{\numberline {2.3}Svojstva odre\IeC {\dj }enog (Rimanovog) integrala}{10}
-\contentsline {subsection}{\numberline {2.4}Geometrijske primene odre\IeC {\dj }enog integrala}{12}
-\contentsline {subsubsection}{\numberline {2.4.1}Povr\IeC {\v s}ine ravnih likova}{12}
-\contentsline {subsubsection}{\numberline {2.4.2}Du\IeC {\v z}ina luka krive}{12}
-\contentsline {subsubsection}{\numberline {2.4.3}Povr\IeC {\v s}ina obrtnoh tela}{13}
-\contentsline {subsection}{\numberline {2.5}Veza izme\IeC {\dj }u odre\IeC {\dj }enog i neodre\IeC {\dj }enog integrala}{13}
-\contentsline {subsection}{\numberline {2.6}Parcijalna integracija i smena promenljive kod odre\IeC {\dj }enog integrala}{14}
-\contentsline {subsection}{\numberline {2.7}Nesvojsveni integral}{15}
-\contentsline {section}{\numberline {3}Diferencijalne jedna\IeC {\v c}ine}{15}
-\contentsline {subsection}{\numberline {3.1}Obi\IeC {\v c}ne diferencijalne jedna\IeC {\v c}ine}{16}
-\contentsline {subsection}{\numberline {3.2}Diferencijalne jedna\IeC {\v c}ine prvog reda}{16}
-\contentsline {subsubsection}{\numberline {3.2.1}Diferencijalne jedna\IeC {\v c}ina kod kod kojih promenljive mogu da se razdvoje}{16}
-\contentsline {subsubsection}{\numberline {3.2.2}Diferencijalne jedna\IeC {\v c}ine oblika $y'=g(ax+by)$}{17}
-\contentsline {subsubsection}{\numberline {3.2.3}Homogena diferencijalna jedna\IeC {\v c}ina prvog reda}{17}
-\contentsline {subsubsection}{\numberline {3.2.4}Diferencijalna jedna\IeC {\v c}ina prvog reda oblika $y' = f\left (\frac {a_1x+b_1y+c_1}{a_2x+b_2y+c_2}\right )$}{17}
-\contentsline {subsubsection}{\numberline {3.2.5}Linearna diferencijalna jedna\IeC {\v c}ina prvog reda}{18}
-\contentsline {subsubsection}{\numberline {3.2.6}Bernulijeva diferencijalna jedna\IeC {\v c}ina}{19}
-\contentsline {subsubsection}{\numberline {3.2.7}Rikatijeva jedna\IeC {\v c}ina}{19}
-\contentsline {section}{\numberline {4}Kombinatorika}{19}
-\contentsline {subsection}{\numberline {4.1}Osnovni kombinatorni principi}{19}
+\contentsline {section}{\numberline {1}Neodre\IeC {\dj }eni integrali}{3}
+\contentsline {subsection}{\numberline {1.1}Uvod}{3}
+\contentsline {subsection}{\numberline {1.2}Osnovni metodi integracije}{4}
+\contentsline {subsubsection}{\numberline {1.2.1}Tablica}{4}
+\contentsline {subsubsection}{\numberline {1.2.2}Kori\IeC {\v s}\IeC {\'c}enjem teoreme o linearnosti integrala}{5}
+\contentsline {subsubsection}{\numberline {1.2.3}Metod smene promenljive}{5}
+\contentsline {subsubsection}{\numberline {1.2.4}Svo\IeC {\dj }enje kvadratnog trinoma na kanonski oblik}{6}
+\contentsline {subsubsection}{\numberline {1.2.5}Parcijalna integracija}{6}
+\contentsline {subsubsection}{\numberline {1.2.6}Metod rekurentnih formula}{6}
+\contentsline {subsubsection}{\numberline {1.2.7}Metod neodre\IeC {\dj }enih koeficijenata}{7}
+\contentsline {subsection}{\numberline {1.3}Posebne metode integracije}{8}
+\contentsline {subsubsection}{\numberline {1.3.1}Integracija racionalnih funkcija}{8}
+\contentsline {subsubsection}{\numberline {1.3.2}Integracija nekih iracionalnih funkcija}{8}
+\contentsline {subsubsection}{\numberline {1.3.3}Integracija trigonometrijskih funkcija}{9}
+\contentsline {section}{\numberline {2}Odre\IeC {\dj }eni integrali}{10}
+\contentsline {subsection}{\numberline {2.1}Uvod}{10}
+\contentsline {subsection}{\numberline {2.2}Potrebni i dovoljni uslovi za integrabilnost funkcija}{10}
+\contentsline {subsection}{\numberline {2.3}Svojstva odre\IeC {\dj }enog (Rimanovog) integrala}{11}
+\contentsline {subsection}{\numberline {2.4}Geometrijske primene odre\IeC {\dj }enog integrala}{13}
+\contentsline {subsubsection}{\numberline {2.4.1}Povr\IeC {\v s}ine ravnih likova}{13}
+\contentsline {subsubsection}{\numberline {2.4.2}Du\IeC {\v z}ina luka krive}{13}
+\contentsline {subsubsection}{\numberline {2.4.3}Zapremina obrtnog tela}{14}
+\contentsline {subsubsection}{\numberline {2.4.4}Povr\IeC {\v s}ina obrtnoh tela}{14}
+\contentsline {subsection}{\numberline {2.5}Veza izme\IeC {\dj }u odre\IeC {\dj }enog i neodre\IeC {\dj }enog integrala}{14}
+\contentsline {subsection}{\numberline {2.6}Parcijalna integracija i smena promenljive kod odre\IeC {\dj }enog integrala}{15}
+\contentsline {subsection}{\numberline {2.7}Nesvojsveni integral}{16}
+\contentsline {section}{\numberline {3}Diferencijalne jedna\IeC {\v c}ine}{16}
+\contentsline {subsection}{\numberline {3.1}Obi\IeC {\v c}ne diferencijalne jedna\IeC {\v c}ine}{17}
+\contentsline {subsection}{\numberline {3.2}Diferencijalne jedna\IeC {\v c}ine prvog reda}{17}
+\contentsline {subsubsection}{\numberline {3.2.1}Diferencijalne jedna\IeC {\v c}ina kod kod kojih promenljive mogu da se razdvoje}{17}
+\contentsline {subsubsection}{\numberline {3.2.2}Diferencijalne jedna\IeC {\v c}ine oblika $y'=g(ax+by)$}{18}
+\contentsline {subsubsection}{\numberline {3.2.3}Homogena diferencijalna jedna\IeC {\v c}ina prvog reda}{18}
+\contentsline {subsubsection}{\numberline {3.2.4}Diferencijalna jedna\IeC {\v c}ina prvog reda oblika $y' = f\left (\frac {a_1x+b_1y+c_1}{a_2x+b_2y+c_2}\right )$}{18}
+\contentsline {subsubsection}{\numberline {3.2.5}Linearna diferencijalna jedna\IeC {\v c}ina prvog reda}{19}
+\contentsline {subsubsection}{\numberline {3.2.6}Bernulijeva diferencijalna jedna\IeC {\v c}ina}{20}
+\contentsline {subsubsection}{\numberline {3.2.7}Rikatijeva jedna\IeC {\v c}ina}{20}
+\contentsline {subsection}{\numberline {3.3}Diferencijalne jedna\IeC {\v c}ine drugog reda}{20}
+\contentsline {subsubsection}{\numberline {3.3.1}Nepotpune diferencijalne jedna\IeC {\v c}ine drugog reda}{20}
+\contentsline {subsection}{\numberline {3.4}Linearna diferencijalna jedna\IeC {\v c}ina $n$-tog reda}{21}
+\contentsline {subsubsection}{\numberline {3.4.1}Homogena linearna diferencijalna jedna\IeC {\v c}ina}{21}
+\contentsline {subsubsection}{\numberline {3.4.2}Homogena linearna diferencijalna jedna\IeC {\v c}ina drugog reda}{22}
+\contentsline {subsubsection}{\numberline {3.4.3}Nehomogena linearna diferencijalna jedna\IeC {\v c}ina drugog reda}{22}
+\contentsline {subsubsection}{\numberline {3.4.4}Linearna diferencijalna jedna\IeC {\v c}ina $n$-tog reda sa konstantnim koeficijentima}{23}
+\contentsline {subsubsection}{\numberline {3.4.5}Metod neodre\IeC {\dj }enih koeficijenata}{24}
+\contentsline {section}{\numberline {4}Kombinatorika}{24}
+\contentsline {subsection}{\numberline {4.1}Osnovni kombinatorni principi}{24}
+\contentsline {subsection}{\numberline {4.2}Permutacije, varijacije i kombinacije}{24}
+\contentsline {subsection}{\numberline {4.3}Varijacije i kombinacije sa ponavljanjem}{25}
+\contentsline {section}{\numberline {5}Bulova algebra}{27}
+\contentsline {subsection}{\numberline {5.1}Primeri Bulove algebre}{27}
+\contentsline {subsubsection}{\numberline {5.1.1}Binarna (dvo\IeC {\v c}lana) Bulova algebra}{27}
+\contentsline {subsubsection}{\numberline {5.1.2}Algebra skupova}{28}
+\contentsline {subsection}{\numberline {5.2}Princip dualnosti}{28}
+\contentsline {subsection}{\numberline {5.3}Neke va\IeC {\v z}nije teoreme Bulove algebre}{28}
+\contentsline {subsection}{\numberline {5.4}Binarna Bulova algebra}{29}
+\contentsline {subsubsection}{\numberline {5.4.1}Bulovi izrazi u binarnoh Bulovoj algebri}{29}
+\contentsline {subsection}{\numberline {5.5}Bulove funkcije}{30}
+\contentsline {subsection}{\numberline {5.6}Baze skupa Bulovih funkcija}{30}

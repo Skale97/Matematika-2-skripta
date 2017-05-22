@@ -4,11 +4,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[serbian]{babel}
-\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{mathtools, amssymb, amsfonts, amsthm}
 \usepackage{tabu}
 \usepackage{centernot}
 \usepackage{enumitem}
-\usepackage{mathtools}
 
 \author{Marko Skakun}
 \title{\textbf{\LARGE MATEMATIKA 2} \\ \normalsize \textit{Skripta}}
@@ -17,7 +16,12 @@
 \newtheorem{corollary}{Posledica}[theorem]
 \newtheorem{definition}{Definicija}
 \newtheorem{example}{Primer}
+
 \newcommand{\card}{\ensuremath{{\rm card\ }}}
+\newcommand{\realset}{\mathbb{R}}
+\newcommand{\dif}{\, \mathrm{d}}
+\newcommand{\powerset}[1]{\mathbb{P}(#1)}
+\newcommand{\Napomena}{\textbf{Napomena: }}
 
 \everymath{\displaystyle}
 
@@ -25,12 +29,15 @@
 \makeatletter
 \@addtoreset{theorem}{section}
 \@addtoreset{definition}{section}
-\@addtoreset{definition}{section}
+\@addtoreset{corollary}{section}
 \@addtoreset{example}{section}
 \makeatother
 
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
 \begin{document}
-	\let\thefootnote\relax\footnotetext{\textit{Napomena:} u slučaju da pronađete neku grešku, ili imate neku preporuku pošaljite je na mail: skalesms@gmail.com}
+	\let\thefootnote\relax\footnotetext{\textit{Napomena:} u svesci trenutno nisu ubačeni primeri jer se veoma sporo kucaju, ali je sva teorija proverena za sada dva puta. U slučaju da pronađete neku grešku (slovnu, konceptualnu,...), ili imate neku preporuku pošaljite je na mail: skalesms@gmail.com}
 	\maketitle
 	\newpage
 	\tableofcontents
@@ -39,4 +46,5 @@
 	\input{Poglavlja/OdredeniIntegrali}
 	\input{Poglavlja/DiferencijalneJednacine}
 	\input{Poglavlja/Kombinatorika}
+	\input{Poglavlja/BulovaAlgebra}
 \end{document}

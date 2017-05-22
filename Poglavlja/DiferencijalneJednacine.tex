@@ -8,7 +8,6 @@
 \end{definition}
 \begin{definition}
 	\textbf{Rešenje} diferencijalne jednačine na intervalu $I$ je svaka funkcija $y$ definisana na $I$ koja jednačinu svodi na identitet.\\
-	\textbf{Napomena (Manjkavost? ostaviti ili ne?):} Ne može rešenje jednačine uvek da se predstavi u eksplicitnom obliku
 \end{definition}
 \begin{definition}
 	\textbf{Opšte rešenje} diferencijalne jednačine $n$-tog reda je svaka funkcija $y$ definisana sa $G(x,y,c_1,c_2,\ldots,c_n)$ gde su $c_1,c_2,\ldots,c_n$ proizvoljne konstante iz $\overline{\mathbb{R}}$, tako da:
@@ -152,8 +151,7 @@ gde je funkcija $f$ definisana i neprekidna na nekom intervalu $I$ na kom se tra
 			a_2\alpha+b_2\beta +c_2=0
 		\end{aligned}
 		\right\}a_i,\, b_i,\, c_i \text{ su koeficijenti iz polazne jednačine}$$
-		$\det \centernot = 0\implies$ sistem ima jedinstven rešenje
-		$\alpha, \beta$ daju nove promenljive i jednačina se svodi na homogenu diferencijalnu jednačinu prvog reda.
+		$\det \centernot = 0\implies$ sistem ima jedinstveno rešenje, $\alpha$ i $\beta$ daju nove promenljive i jednačina se svodi na homogenu diferencijalnu jednačinu prvog reda.
 \end{enumerate}
 
 \subsubsection{Linearna diferencijalna jednačina prvog reda}
@@ -217,9 +215,218 @@ $$z'+z\underbrace{P(x)}_{P_1(x)}=\underbrace{(1-m)Q(x)}_{Q_1(x)}$$ - linearna di
 
 \subsubsection{Rikatijeva jednačina}
 \textbf{Opšti izraz:}
-$$y' = P(x)(y')^2+Q(x)y+R(x)$$
+$$y' = P(x)y^2+Q(x)y+R(x)$$
 gde su funkcije $P$, $Q$ i $R$ definisane i neprekidne na nekom intervalu $I$ na kom se rešava jednačina.\\
 \textbf{Opšte rešenje:}
 Izaberimo takvu smenu da uklonimo $R(x)$ i dobijamo Bernulijevu diferencijalnu jednačinu za $m=2$\\
 $y^2 \implies m= 2 \implies$ potrebno nam je jedno partikularno rešenje, od toga polazimo $(y_p)$\\
 $y=y_p+\frac{1}{z} \implies$ smena zavisno promenljive\\
+$y' = y'_p - \frac{z'}{z^2} \implies$ izvod nije nula\\
+\begin{gather*}
+	y'_p - \frac{z'}{z^2} = ((y_p)^2 + \frac{2y_p}{z} + \frac{1}{z^2}) P(x) + Q(x)(y_p + \frac{1}{z}) + R(x)\\
+	y'_p - \frac{z'}{z^2} = y_p^2 P(x) + 2P(x)\frac{y_p}{z} + \frac{P(x)}{z^2} + Q(x)y_p + \frac{Q(x)}{z} + R(x)\\
+	y'_p = P(x)y_p^2 + Q(x)y_p + R(x)\\
+	z' = -2zP(x)y_p - P(x) - zQ(x) \implies\\
+	z' + 2zP(x)y_pz+zQ(x)= -P(x)\\
+	z' + z\underbrace{(2P(x)y_p+Q(x))}_{P_1} = \underbrace{-P(x)}_{Q_1}
+\end{gather*} 
+- linearna diferencijalna jednačina prvog reda
+
+\subsection{Diferencijalne jednačine drugog reda}
+
+\textbf{Opšti izraz:}
+$$ F(x, y, y', y'') $$
+gde je $F$ funkcija definisana i dva puta diferencijabilna na nekom intervalu $I$ na kom se jednačina rešava.
+
+\subsubsection{Nepotpune diferencijalne jednačine drugog reda}
+\begin{enumerate}[label = \textbf{\arabic*. slučaj}] 
+	\item 
+		$ F(y', y'') = 0 $ ili $ y'' = f(y') $\\
+		- uvodi se smena zavisno promenljive $ p = y $\\
+		\begin{align*}
+			\begin{aligned}
+				y' = p\\
+				y'' = \frac{\dif p}{\dif x}\\
+				y'' = f(p)\\
+			\end{aligned}
+			\quad \quad
+			\begin{aligned}
+			\frac{\dif p}{\dif x} = f(p)\\
+			\int \frac{\dif p}{f(p)} = x + c \implies \varphi (x, p, c_1) = 0
+			\end{aligned}
+		\end{align*}
+		Dolazi se do diferencijalne jednačine prvog reda $ \varphi (x, y, c_1) = 0 $, i na kraju rešavanjem te diferencijalne jednačine dolazi se do: $\psi (x, y, c_1, c_2) = 0$
+	\item 
+		$ F(x, y, y'') $\\
+		- uvodi se smena zavisno promenljive $ p = y' $\\
+		\begin{align*}
+		\begin{aligned}
+		y' = p\\
+		y'' = \frac{\dif p}{\dif x}
+		\end{aligned}
+		\implies F(x, p, \frac{\dif p}{\dif x}) = 0
+		\end{align*}
+		Dolazi se do diferencijalne jednačine prvog reda $ \varphi (x, y', c_1) = 0 $, i na kraju rešavanjem te diferencijalne jednačine dolazi se do: $\psi (x, y, c_1, c_2) = 0$
+	\item 
+		$ F(y, y', y'') = 0 $\\
+		- uvodi se smena zavisno promenljive $ y' = p $ (gubimo $ x $ tokom smene)\\
+		\begin{align*}
+		\begin{aligned}
+		y' = p\\
+		y'' = \frac{\dif p}{\dif x} \frac{\dif y}{\dif y} = y' \frac{\dif p}{\dif y} = p \frac{\dif p}{\dif y}\\
+		\end{aligned}
+		\implies F(y, p, p \frac{\dif p}{\dif x}) = 0
+		\end{align*}
+		Dolazi se do diferencijalne jednačine prvog reda $ \varphi (y, p, c_1) = 0 $, i na kraju rešavanjem te diferencijalne jednačine dolazi se do: $\psi (x, y, c_1, c_2) = 0$
+\end{enumerate}
+
+\subsection{Linearna diferencijalna jednačina $n$-tog reda}
+\begin{definition}
+	Diferencijalna jednačina oblika $y^{(n)} + f_1(x)y^{(n-1)} + \ldots + f_n(x)y = F(x)$ naziva se \textbf{linearna diferencijalna jednačina $n$-tog reda}. Pri tome podrazumevamo da su $f_i(x)$ i $F(x)$ definisane i neprekidne na posmatranom intervalu $I$.
+	\begin{enumerate}[label = \arabic*.)]
+		\item
+			$F(x) \equiv 0$ - homogena jednačina
+		\item 
+			$F(x) \centernot \equiv 0$ - nehomogena jednačina
+	\end{enumerate} 
+	\Napomena ako su $f_i(x)$ gde je $i = \overline{1, n}$ konstante jednačina je sa konstantnim koeficijentima (u suprotnom je sa gunkcionalnim).
+\end{definition}
+
+\subsubsection{Homogena linearna diferencijalna jednačina}
+	\begin{definition}
+		$L^{n}(y) = y^{n} + d_1(x)y^{n-1} + \ldots + f_n(x)y = 0$ naziva se \textbf{linearni diferencijalni operator $n$-tog reda}
+	\end{definition}
+	Jedno rešenje (trivijalno) diferencijalne jednačine $L^{n}(y)$ je $y=0$, ali mi tražimo netrivijalna. Takođe se vidi: ako su $y_1(x)$ i $y_2(x)$ rešenja, tada je i $c_1y_1(x) + x_2 y_2(x)$ takođe rešenje date diferencijalne jednačine. Što se može uopštiti na proizvoljan broj rešenja. 
+	\begin{gather}
+		L^n (y_1) = 0 \land L^n(y_2) = 0\\
+		L^n (y_1c_1 + y_2c_2) = c_1L^n(y_1) + x_2 L^n(y_2) = c_1\cdot 0 + c_2\cdot 0= 0+0 = 0
+	\end{gather}
+	\begin{definition}
+		Funkcije $y_1(x), y_2(x), \ldots, y_n(x)$ definisane na intervalu $I$ mogu biti:
+		\begin{enumerate}[label = \arabic*.)]
+			\item 
+				Linearno zavisne na $I$\\
+				- ako postoje konstante $c_2, c_2, \ldots, c_n$ takve da $\sum_{k=0}^{n}c_k^2 \centernot 0 $ i da važi da je $\forall x \in I) c_1y_1(x) + c_2y_2(x) + \ldots + c_ny_n(x) = 0$
+			\item 
+				Linearno nezavisne na $I$\\
+				- u suprotnom
+		\end{enumerate}
+	\Napomena u slučaju $n=2$ linearna nezavisnost se sodi na $\frac{y_1}{y_2} \centernot const$
+	\end{definition}
+	\begin{theorem}
+		Ako su  $y_1(x), y_2(x), \ldots, y_n(x)$ rešenja jednačine $L^n(y) = 0$ i ako su funkcije  $y_1(x), y_2(x), \ldots, y_n(x)$ linearno nezavisne, tada je opšte rešenje date jednačine:
+		$$ y =c_1y_1(x) + c_2y_2(x) + \ldots + c_ny_n(x) $$
+		gde su $c1$ za $i = \overline{1, n}$ konstante
+	\end{theorem}
+
+\subsubsection{Homogena linearna diferencijalna jednačina drugog reda}
+	\textbf{Opšti izraz: }
+	$$ L^2(y) = 0 \; \lor \; y'' + P(x)y' + Q(x) y = 0 $$
+	\begin{theorem}
+		Liuvilova formula: Ako je $y_1(x)$ jedno netrivijalno partikularno rešenje linearne diferencijalne jednačine $y'' + P(x)y+ Q(x)y = 0$ tada je:
+		$$y_2(x) = y_1(x) \int \frac{1}{y_1^2(x)} e^{-\int P(x) \dif x} \dif x$$
+		takođe partikularno rešenje date jednačine linearno nezavisno od $y_1$.
+	\end{theorem}
+	\begin{proof}
+		\begin{align*}
+			\begin{gathered}
+				y = y_1z\\
+				y' = y'_1z + y_1 z'\\
+				y'' = y''_1z + 2y'_1z' + z''y_1\\
+				y''_1z+2y'_1z' + y_1z'' + P(x)y+_1z + P(x)y_1z' + Q(x)y_1z = 0\\
+				(y''_1 + P(x)y'_1 + Q(x)y_1) + z'(2y'_1 + P(x)y_1) + z''y_1 = 0\\
+				y''_1 + P(x)y'_1 + Q(x)y_1 = 0 \text{ partikularno, netrivijalno}\\
+				z'' + z'(\frac{2y'_1}{y_1})+ P(x)) = 0\\
+			\end{gathered}
+			\quad \quad
+			\begin{gathered}
+				z' = x_1 e^{-\int (\frac{2y'_1}{y_1}+P(x)) \dif x} = \frac{\dif z}{\dif x}\\
+				\frac{\dif z}{\dif x} = c_1 e^{-2\ln |y_1|-\int P(x) \dif x}\\
+				\frac{\dif z}{\dif x} = c_1 e^{\ln \frac{1}{y_1^2}-\int P(x) \dif x}\\
+				\frac{\dif z}{\dif x} = c_1 \frac{1}{y_1^2}e^{-\int P(x) \dif x}\\
+				\dif z = \frac{c_1}{y_1^2} e^{-\int P(x) \dif x} \dif x\\
+				z = \int \frac{c_1}{y_1^2} e^{-\int P(x) \dif x} \dif x + c_2\\
+				y = y_1c_2 + c_1y_1 \int \frac{e^{- \int P(x) \dif x}}{y_1^2} \dif x\\
+			\end{gathered}
+		\end{align*}
+		$$ y_2 = y_1 \int \frac{1}{y_1^2} e^{- \int P(x) \dif x} \dif x $$
+	\end{proof}
+
+\subsubsection{Nehomogena linearna diferencijalna jednačina drugog reda}
+$$ L^n(y) = F(x) $$
+U slučaju $n = 2$ snižavanje reda pomožu jednog partikularnog rešenja dovodi do linearne nehomogene jednačine prvog reda.
+\begin{theorem}
+	Neka je $y_h$ opšte ređenjee homogene jednačine $L^n(y) = 0$ i $y_p$ jedno partikularno rešenje nehomogene jednačine $L^n(y) = F(x)$. Tada je opšte rešenje nehomogene jednačine $L^n(y)=F(x)$ dato sa 
+	$$y = y_h + y_p$$
+\end{theorem}
+\begin{proof}
+	Neposredno se proverava da je $L^n(y_h + y_p) = L^n(y_h) + L^n(y_p) = 0 + F(x) = F(x)$ jer je $F(x) = L^n(y_p)$ i $0 = L^n(y_h)$
+\end{proof}
+\begin{theorem}
+	\textbf{Metod varijacije konstanti (Lagranžov):} Neka je $y_h = c_1 y_1(x) + c_2 y_2(x) + \ldots + c_n y_n(x)$ opšte rešenje homogene jednačine $L^n(y) = 0$ tada je opšte rešenje nehomogene jednačine $L^n(y) = F(x)$ dato sa $y = c_1(x) y_1(x) + c_2(x) y_2(x) + \ldots + c_n (x) y_n(x)$ gde su $c_1(x), \, c_2(x), \, \ldots, \, c_n(x)$ funkcije čiji se izvodi nalaze rešavanjem sistema jednačina:
+	\begin{gather*}
+		c'_1(x) y_1(x) + c'_2(x) y_2(x) + \ldots + c'_n (x) y_n(x) = 0\\
+		c'_1(x) y'_1(x) + c'_2(x) y'_2(x) + \ldots + c'_n (x) y'_n(x) = 0\\
+		\vdots\\
+		c'_1(x) y_1^{(n)}(x) + c'_2(x) y^{(n)}_2(x) + \ldots + c'_n (x) y^{(n)}_n(x) = F(x)\\
+	\end{gather*}
+	a zatim se same funkcije $c_1(x), \, c_2(x), \, \ldots, \, c_n(x)$ nalaze integracijom:
+	\begin{gather*}
+		\int c'_1(x) \dif = c_1(x) + c^*_1\\
+		\int c'_2(x) \dif = c_2(x) + c^*_2\\
+		\vdots\\
+		\int c'_n(x) \dif = c_n(x) + c^*_n\\
+	\end{gather*}
+	Opšte rešenje se dobija kao $y = y_p + y_h$ gde je jedno partikularno rešenje  $y_p = y_1 c_1(x) + y_2 c_2 (x) + \ldots + y_n c_n (x)$.
+\end{theorem}
+
+\subsubsection{Linearna diferencijalna jednačina $n$-tog reda sa konstantnim koeficijentima}
+\begin{definition}
+	\underline{Homogena} jednačina $L^n(y) = y^{(n)} + p_1 y^{(n-1)} + \ldots + p_n y = 0$ gde su $p_i \in \overline{\realset}$ za $i = \overline{1, n}$ konstante, naziva se \textbf{\underline{homogena} linearna diferencijalna jednačina $n$-tog reda sa konstantnim koeficijentima}\\
+\end{definition}
+Ovaj tip diferencijalnih jednačina rešava se traženjem partikularnog rešenja u obliku $y = e^{\lambda x}$. Zamenom u jednačinu dobijamo $e^{\lambda x}(\lambda^n + p_1 \lambda^{n-1} + \ldots + p_n) = 0$
+\begin{definition}
+	Algebarska jednačina $\lambda^n + p_1 \lambda^{n-1} + \ldots + p_{n-1} \lambda + p_n = 0$ zove se karakteristična jednačina prethodno navedene diferencijalne jednačine.
+\end{definition}
+Karakteristična jednačina ima $n$ korena i svakom korenu odgovara po jedno partikularno rešenje, po sledećim pravilima:
+\begin{enumerate}[label = \arabic*)]
+	\item Svakom realnom, jednostavnom korenu $\lambda$ odgovara jedno partikularno rešenje $y_p = e^{\lambda x}$
+	\item Svakom realnom korenu $\lambda$ kada $k > 1$ odgovara $k$ partikularnih rešenja $e^{\lambda x}, \, x e^{\lambda x}, \, \ldots, \, x^{k-1} e^{\lambda x}$
+	\item Svakom paru kompleksnih, jednostavnih korena $\alpha \pm i \beta$ odgovaraju partikularna rešenja $e^{\alpha x}\cos \beta x, \, e^{\alpha x} \sin \beta x$.
+	\item Svakom paru kompleksnih korena $\alpha \pm i \beta$ kada $k > 1$ odgovara $2k$ partikularnih rešenja:
+	\begin{gather*}
+		e^{\alpha x} \cos \beta x, \, xe^{\alpha x} \cos \beta x, \, \ldots, \, x^{k-1}e^{\alpha x} \cos \beta x, \, \\
+		e^{\alpha x} \sin \beta x, \, xe^{\alpha x} \sin \beta x, \, \ldots, \, x^{k-1}e^{\alpha x} \sin \beta x, \, \\
+	\end{gather*}
+\end{enumerate}
+Primenom ovih pravila na sve korene karakteristične jednačine dobija se skup od ukupno $n$ linearno nezavisnih rešenja $y_1, y_2, \ldots, y_n$ diferencijalne jednačine pa je opšte rešenje homogene diferencijalne jednačine $y_h = c_1 y_1(x) + c_2 y_2(x) + \ldots + c_n y_n(x)$
+\begin{definition}
+	\underline{Nehomogena} jednačina $L^n(y) = y^{(n)} + p_1 y^{(n-1)} + \ldots + p_n y = F(x)$ gde su $p_i \in \overline{\realset}$ za $i = \overline{1, n}$ konstante, naziva se \textbf{\underline{nehomogena} linearna diferencijalna jednačina $n$-tog reda sa konstantnim koeficijentima}
+\end{definition}
+Rešavanje nehomogene jednačine sastoji se iz 2 koraka:
+\begin{enumerate}[label = \arabic*)]
+	\item Reši se homogena jednačina (odredi se $y_h$)
+	\item Određuje se opšte rešenje nehomogene jednačine metodom varijacije konstantni
+\end{enumerate}
+\Napomena ako je funkcija $F(x)$ specijalnog oblika (izvodi su istog oblika kao sama funkcija - polinomska/eksponencijalna/trigonometrijska funkcija, ili su zbirovi/proizvodi tih funkcija), partikularno rešenje $y_p$ može se odrediti metodom neodređenih koeficijenata (više o tome u 3.4.5) tada je opšte rešenje $y = y_h + y_p$
+\subsubsection{Metod neodređenih koeficijenata}
+	Metod neodređenih koeficijenata sastoji se u tome da se partikularno rešenje nehomogene jednačine pretpostavi u obliku koji je sličan obliku funkcije $F(x)$ ali sa neodređenim koeficijentima koji se određuju zamenom u diferencijalnu jednačinu. Kada se ovako nađe partikularno rešenje $y_p$, onda je opšte rešenje $y = y_h + y_p$.
+Ovaj metod primenjuje se samo u slučaju kada je
+:
+\begin{enumerate}[label = \arabic*)]
+	\item 
+		$F(x) = e^{\alpha x} Pm(x)$ gde je $Pm(x)$ - polinom stepena $m$
+		\begin{enumerate}[label = \alph*)]
+			\item  $\alpha$ nije koren karakteristične jednačine $y_p = e^{\alpha x} Qm(x)$
+			\item  $\alpha$ je koren reda $k$, $k \geq 1$ karakteristične jednačine $y_p = x^k e^{\alpha x} Qm(x)$
+		\end{enumerate}
+		Koeficijenti polinoma $Qm(x)$ nalaze se zamenom u nehomogenu diferencijalnu jednačinu, metodom neofređenih koeficijenata.
+	
+	\item 
+		$F(x) = e^{\alpha x} (Pm_1(x)\cos \beta x + Pm_2???(x)\sin \beta x)$
+		\begin{enumerate}[label = \alph*)]
+			\item $\alpha \pm i \beta$ nije koren karakteristične jednačine $y_p = e^{\alpha x} (Qm(x)  \cos \beta x + Rm(x) \sin \beta x) \quad dgQm dgRm = max{m_1, m_2}$
+			\item  $\alpha \pm i \beta$ je koren reda $k$, $k \geq 1$ karakteristične jednačine $y_p = x^k e^{\alpha x} (Qm(x)  \cos \beta x + Rm(x) \sin \beta x) \quad dgQm dgRm = max{m_1, m_2}$
+		\end{enumerate}
+		koeficijenti polinoma $Qm(x), \, Rm(x)$ nalaze se zamenom u nehomogenu diferencijalnu jednačinu metodom neodređenih koeficijenata
+\end{enumerate}

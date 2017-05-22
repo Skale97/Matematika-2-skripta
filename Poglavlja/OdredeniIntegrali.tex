@@ -4,12 +4,12 @@
 	Neka je data funkcija $f$ definisana na segmentu $[a, b]$ gde su $a, b \in \mathbb{R} \land a<b$. Uređena $m$-torka $d = (x_0, x_1, \ldots, x_n, \xi_0, \xi_1, \ldots, \xi_{n-1})$ takva da je $a \equiv x_0 < x_1 < \ldots < x_n \equiv b\; \land \;x_i \leq \xi_i \leq x_{i+1}; \; i=\overline{0, n-1}$ nazivamo \textbf{podelom} segmenta $[a, b]$
 \end{definition}
 \begin{definition}
-	 Suma $\sum f(\xi_i)(x_{i+1}-x_i)$ naziva se \textbf{Rimanova (integralna) suma} funkcije $f$ na intervalu $[a, b]$ za datu podelu $d$.\\
+	 Suma $\sum_{i=0}^{n-1} f(\xi_i)(x_{i+1}-x_i)$ naziva se \textbf{Rimanova (integralna) suma} funkcije $f$ na segmentu $[a, b]$ za datu podelu $d$.\\
 	 \textit{Oznaka:} $$S(f, d, a, b)$$
 \end{definition}
 \begin{definition}
 	\textbf{Norma} podele d je $||d|| = max(x_{i+1}-x_i); \; i=\overline{0,n-1}$.\\
-	\textbf{Napomena:} Iz ove definicije sledi da ako $||d|| \to 0$ tada $(\forall i) x_{i+n}-x_i \to 0 \land n \to \infty$
+	\textbf{Napomena:} Iz ove definicije sledi da ako $||d|| \to 0$ tada $(\forall i) x_{i+1}-x_i \to 0 \land n \to \infty$
 \end{definition}
 \begin{definition}
 	Neka je data funkcija $f$ definisana na segmentu $[a, b]$ gde su $a, b \in \mathbb{R} \land a<b$. Ako postoji realan broj $I$ takav da važi:
@@ -28,17 +28,17 @@
 	(Darbuove sume funkcije $f$ na segentu $[a,b]$)\\
 	Neka je funkcija $f$ ograničena na segmentu $[a,b]$. Ako segment $[a,b]$ podelimo tačkama $a \equiv x_0 < x_1 < \ldots < x_n \equiv b$ i formiramo sume 
 	$$\begin{aligned}
-		\underline{S}(f,d,a,b) = \sum^{n-1}_{i=0} m_i(x_{i+q}-x_i)
+		\underline{S}(f,d,a,b) = \sum^{n-1}_{i=0} m_i(x_{i+1}-x_i)
 	\end{aligned}
 	\quad \text{ i } \quad
 	\begin{aligned}
-		\overline{S}(f,d,a,b) = \sum^{n-1}_{i=0} M_i(x_{i+q}-x_i)
+		\overline{S}(f,d,a,b) = \sum^{n-1}_{i=0} M_i(x_{i+1}-x_i)
 	\end{aligned}$$
 	gde $m_i$ i $M_i$ označavaju infinum i supremum funkcije $f$ na segmentu $[x_i,x_{i+1}]; \; i=\overline{0, n-1}$, $\underline{S}$ i $\overline{S}$ se nazivaju \textbf{donja} i \textbf{gornja Darbuova suma} funkcije $f$ na segmentu $[a,b]$.\\
 	\textbf{Napomena:} Ako je $f$ neprekidna funkcija na $[a,b]$ onda $f$ na segmentima $[x_i,x_{i+1}]$ (u nekim tačkama $\xi_i$) dostiže svoj infinum $m_i$ i supremum $M_i$, pa su sume $\underline{S}$ i $\overline{S}$ specijalni slučajevi opšteg pojma integralne sume.
 \end{definition}
 \begin{theorem}
-	Ograničena funkcija $f$ je integrabilna na $[a,b]$ ako i samo ako je: $$\lim_{||d||\to 0} \left(\overline{S}(f,d,a,b) - \underline{S}(f,d,a,b)\right) = 0$$
+	\textbf{Ograničena} funkcija $f$ je \textbf{integrabilna} na $[a,b]$ ako i samo ako je: $$\lim_{||d||\to 0} \left(\overline{S}(f,d,a,b) - \underline{S}(f,d,a,b)\right) = 0$$
 \end{theorem}
 \begin{theorem}
 	Ako je funkcija $f$ \textbf{integrabilna} na segmentu $[a,b]$ tada je $f$ \textbf{ograničena} na $[a,b]$ \\
@@ -59,7 +59,7 @@
 \begin{enumerate}[label=\textbf{\arabic*.)}]
 	\item
 		\begin{theorem}
-			Ako je funkcija $f$ integrabilna na segmentu $[a,b]$ gde je $a<b \land a,b \in \mathbb{R}$ onda $$\exists \int \limits^b_a f(x) \, \mathrm{d}x = - \int \limits^a_b f(x) \, \mathrm{d}x$$
+			Ako je funkcija $f$ integrabilna na segmentu $[a,b]$ gde je $a,b \in \mathbb{R} \land a<b$ onda $$\exists \int \limits^b_a f(x) \, \mathrm{d}x = - \int \limits^a_b f(x) \, \mathrm{d}x$$
 		\end{theorem}
 	\item 
 		\textbf{Linearnost integrala}
@@ -75,7 +75,7 @@
 			\begin{gather*}
 				=\lim_{||d|| \to 0} \sum (x_{i+1}-x_i)(\alpha f(\xi_i) + \beta g(\xi_i)) =\\
 				= \lim_{||d|| \to 0} \left(\sum (x_{i+1}-x_i)\alpha f(\xi_i) + \sum (x_{i+1}-x_i)\beta g(\xi_i)\right) =\\
-				= \lim_{||d|| \to 0} \sum (x_{i+1}-x_i)\alpha f(\xi_i) + lim_{||d|| \to 0}\sum (x_{i+1}-x_i)\beta g(\xi_i) =\\
+				= \lim_{||d|| \to 0} \sum (x_{i+1}-x_i)\alpha f(\xi_i) + \lim_{||d|| \to 0}\sum (x_{i+1}-x_i)\beta g(\xi_i) =\\
 				= \alpha\lim_{||d|| \to 0} \sum (x_{i+1}-x_i) f(\xi_i) + \beta \lim_{||d|| \to 0}\sum (x_{i+1}-x_i) g(\xi_i) =\\
 				= \alpha \int \limits^b_a f(x) \, \mathrm{d}x + \beta \int 	\limits^b_a g(x) \, \mathrm{d}x
 			\end{gather*}
@@ -109,7 +109,7 @@
 			$$d=(x_0, x_1, \ldots,x_n, \xi_1, \xi_2, \ldots, \xi_n)$$
 			Posmatrajmo integralne sume $S(f, d, a, b)$ i $S(f_1, d, a, b)$
 			Ako tačka $c$ nije tačka podele $d$, tj. $(\forall \xi \in d) \xi\centernot = c$ onda su obe sume jednake. 
-			Sume se razlikuju za $f$ i $f_1$ samo u slučaju da je $(\exists \xi \in d) c = \xi$ i tada bi se razlika ogčedača u sledećem sabirku:
+			Sume se razlikuju za $f$ i $f_1$ samo u slučaju da je $(\exists \xi \in d) \xi = c$ i tada bi se razlika ogledala u sledećem sabirku:
 			$$f(c)(x_i-x_{i-1}) \text{ i } f_1(c)(x_i-x_{i-1})$$
 			Oba sabirka međutim teže nuli kada norma podele teži nuli $||d||\to 0$
 			$$\implies \lim_{||d||\to 0} S(f, d, a, b) = \int \limits^b_a f(x) \, \mathrm{d}dx = \lim_{||d||\to 0} S(f_1, d, a, b) = \int \limits^b_a f_1(x) \, \mathrm{d}dx  $$
@@ -172,13 +172,19 @@
 \subsubsection{Dužina luka krive}
 \begin{theorem}
 	Neka je u ravni data kriva $(a\leq x \leq b) y=f(x)$ i neka su $f(x)$ i $f'(x)$ neprekidne na $[a,b]$. Dužina luka krive nad segmentom $[a,b]$ je:
-	$$L = \int \limits^b_a \sqrt{1+(f'(x))^2} \, \mathrm{d}x = \int \limits^b_a \sqrt{1+(\frac{\mathrm{d}y}{\mathrm{d}x})^2} \, \mathrm{d}x = \int \limits^b_a \sqrt{\mathrm{d}x^2 + \mathrm{d}y^2} \, \mathrm{d}x$$
+	$$L = \int \limits^b_a \sqrt{1+(f'(x))^2} \, \mathrm{d}x = \int \limits^b_a \sqrt{1+(\frac{\mathrm{d}y}{\mathrm{d}x})^2} \, \mathrm{d}x = \int \limits^b_a \sqrt{\mathrm{d}x^2 + \mathrm{d}y^2}$$
+\end{theorem}
+
+\subsubsection{Zapremina obrtnog tela}
+\begin{theorem}
+	???????????????''----------------------????????????????'''
+	$$V= \pi \int \limits^b_a \left(f(x)\right)^2\, \mathrm{d}$$
 \end{theorem}
 
 \subsubsection{Površina obrtnoh tela}
 \begin{theorem}
 	Neka su funkcije $f$ i $f'$ neprekidne na odsečku $[a,b]$. Ako se krivoliniski trapez, čije su stranice segment $[a,b]$, delovi pravih $x=a$, $x=b$ i kriva $(a\leq x \leq b) y=f(x)$ obrće oko $x$-ose, dobija se obrtno telo. Površina tog tela je:
-	$$2\pi \int \limits^b_a f(x) \sqrt{1+(f'(x))^2}\, \mathrm{d}x$$
+	$$P = 2\pi \int \limits^b_a f(x) \sqrt{1+(f'(x))^2}\, \mathrm{d}x$$
 \end{theorem}
 
 
@@ -199,8 +205,8 @@
 			Ako je $\Delta x > 0$ (analogno se pokazuje za $\Delta x <0$, tada $[x+\Delta x] \subset [a,b]$) posmatrajmo segment $[x,x+\Delta x]\subset [a,b]$
 			$$\varphi(x+\Delta x) - \varphi(x) = \int \limits^{x+\Delta x}_a f(t) \, \mathrm{d}t - \int \limits^x_a f(t) \, \mathrm{d}t=$$
 			$$= \int \limits^{x+\Delta x}_a f(t) \, \mathrm{d}t + \int \limits^a_x f(t) \, \mathrm{d}t=\int \limits^{x+\Delta x}_x f(t) \, \mathrm{d}t$$
-			Na osnovu teorema sa kojima smo se vež upoznali važi sledeći niz implikacija:\\
-			$f$ je integrabilna na $[a,b] \implies f$ je integrabilna na $[x,x+\Delta x]\subset[a,b] \implies f$ je ograničena na $[x,x+\Delta x] \implies (\exists m_1, M_1)(\forall t \in [x, x+\Delta x]) m_1\leq f(t) \leq M_1$ Na osnovu teoreme o srednjoj vrednosti za određeni integral sledi: $(\exists \mu) m_1\leq \mu \leq M_1$ takvo da je 
+			Na osnovu teorema sa kojima smo se već upoznali važi sledeći niz implikacija:\\
+			$f$ je integrabilna na $[a,b] \implies f$ je integrabilna na $[x,x+\Delta x]\subset[a,b] \implies f$ je ograničena na $[x,x+\Delta x] \implies (\exists m, M)(\forall t \in [x, x+\Delta x]) m\leq f(t) \leq M$ Na osnovu teoreme o srednjoj vrednosti za određeni integral sledi: $(\exists \mu) m\leq \mu \leq M$ takvo da je 
 			\begin{gather*}
 				\int \limits^{x+\Delta x}_x f(t) \, \mathrm{d}t = \mu \Delta x\\
 				\varphi(x+\Delta x)- \varphi(x) = \mu \Delta x\\
@@ -255,7 +261,7 @@
 	$$\int \limits^{a+T}_a f(x) \, \mathrm{d}x = \int \limits^T_0 f(x) \, \mathrm{d}x$$
 \end{theorem}
 \begin{proof}
-$$\ldots \quad \text{?}$$
+------------???????????????''--------------
 \end{proof}
 \begin{theorem}
 	Ako je funkcija $f$ neprekidna na $[-a, a]$ tada važi:
@@ -267,7 +273,7 @@ $$\ldots \quad \text{?}$$
 	$$
 \end{theorem}
 \begin{proof}
-$$\ldots \quad \text{?}$$
+------------???????????????''--------------
 \end{proof}
 
 \subsection{Nesvojsveni integral}

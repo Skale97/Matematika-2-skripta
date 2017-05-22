@@ -1,0 +1,253 @@
+\section{Bulova algebra}
+\begin{definition}
+	Skup $B$ sa najmanje 2 elementa na kome su definisane 2 binarne operacije $\land$ i $\lor$ je \textbf{Bulova algebra} ako važe sledeće aksiome:
+	\begin{enumerate}[label=$B_{\arabic *}$: ]
+		\item 
+			Komutativnost 
+			\begin{align*}
+				(\forall a, b \in B) \; a\lor b &= b \lor a\\
+				a\land b &= b\land a
+			\end{align*}
+		\item
+			Asocijativnost
+			\begin{align*}
+				(\forall a, b, c \in B) \; (a\lor b) \lor c &= a\lor (b\lor c)\\
+				(a\land b)\land c &= a \land (b\land c)
+			\end{align*}
+		\item
+			Distributivnost
+			\begin{align*}
+				(\forall a, b, c \in B) \; a\lor (b\land c) &= (a\lor b)\land (a\lor c)\\
+				a\land (b \lor c) &= (a \land b) \lor (a \land c)
+			\end{align*}
+		\item
+			Egzistencija neutralnoh elementa
+			\begin{align*}
+				&(\exists 0 \in B)(\forall x \in B) \; x\lor 0 = x\\
+				&(\exists 1 \in B)(\forall x \in B) \; x\land 1 = x
+			\end{align*}
+		\item
+			Egzistencija komplemnta
+			\begin{align*}
+				(\forall x \in B)(\exists \overline{x} \in B)\; x\land \overline{x} &= 0\\
+				x \lor \overline{x} &= 1
+			\end{align*}
+	\end{enumerate}
+	Bulova algebra se označava sa $B=(B, \lor, \land)$ ili $B = (B, \lor, \land, \neg)$.\\
+	\textbf{Napomena:} Ovaj sistem aksioma nije minimalan.
+\end{definition}
+
+\subsection{Primeri Bulove algebre}
+
+\subsubsection{Binarna (dvočlana) Bulova algebra}
+	$B = \{ 0, 1 \}$ i operacije $\land, \lor, \neg$ su definisane tablicama:
+	\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		$p$ & $q$ & $\overline{p}$ & $p\land q$ & $p\lor q$ \\ \hline
+		0 & 0 & 1 & 0        & 0       \\ \hline
+		0 & 1 & 1 & 0        & 1       \\ \hline
+		1 & 0 & 0 & 0        & 1       \\ \hline
+		1 & 1 & 0 & 1        & 1       \\ \hline
+	\end{tabular}
+	\end{table}
+\subsubsection{Algebra skupova}
+	\begin{definition}
+		Algebra $(\powerset{u}, \cup, \cap)$ gde je $\powerset{I}$ partitivni skup skupa $I\; (I\centernot = \emptyset)$, $\cup$ unija, $\cap$ presek i $^c$ komplement je Bulova algebra.\\
+	\end{definition}
+	Ovo sledi iz osobina koje važe za uniju i presek skupova:
+	\begin{enumerate}[label = \arabic*.]
+		\item $A \cup B = B \cup A \quad A \cap B = B \cap A$
+		\item $(A\cup B) \cup C = A \cup (B \cup C) \quad (A\cap B) \cap C = A \cap (B \cap C)$
+		\item $A \cup (B \cap C) = (A \cup B) \cap (A \cup C) \quad A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+		\item $A \cup \emptyset = A \quad A \cap I = A$
+		\item $A \cup A^c = I \quad A \cap A^c = \emptyset$
+	\end{enumerate}
+	\begin{theorem}
+		Za svaku konačnu Bulovu algebru $V=(V, \lor, \land)$ postoji skup $I$ i bijekcija $f:B \to \powerset{I}$ tako da važe relacije:
+		\begin{align*}
+			f(x \lor y) = f(x) \cup f(y)\\
+			f(x \land y) = f(x) \cap f(y)
+		\end{align*}
+	\end{theorem}
+	\begin{corollary}
+		\begin{itemize}
+			\item Stounova teorema tvrdi da je svaka konačna Bulova algebra izomorfna nekoj algebri skupova $(\powerset{I}, \cup, \cap)$
+			\item Ova teorema omogućava da se u dokazivanju rezultata Bulove algebre koriste metode iz teorije skupova
+			\item Bulova algebra može imati najviše $2^n$ elemenata, gde je $n \in \mathbb{N}$, jer je $\left| \powerset{I}\right| = 2^n$, za $|I|=n$.
+		\end{itemize}
+	\end{corollary}
+\subsection{Princip dualnosti}
+\begin{definition}
+	Ako je neka jednakost teorema Bulove algebre, tada zamenom operacija $\land$ i $\lor$ i elemenata $0$ i $1$ u toj relaciji dolazimo do tačne jednakosti. Ta jednakost naziva se \textbf{dualna teorema} date teoreme
+\end{definition}
+
+\subsection{Neke važnije teoreme Bulove algebre}
+\begin{theorem}
+	\begin{enumerate}[label = \textbf{\arabic*.)}]
+		\item Idempotentnost $(\forall a \in B) \; a \lor a = a \quad a\land a = a$
+		\item $(\forall a \in B)\; a \lor q = q \quad a \land 0 = 0$
+		\item Apsorpcija $(\forall a, b \in B)\; a \lor (a \land b) = a \quad a \land (a \lor b) = a$
+		\item Involucija $(\forall a \in B)\; \overline{(\overline{a})} = a$
+		\item Za neutralne elemente $0$ i $1$ važi $\overline{0} = 1 \quad \overline{1} = 0$
+		\item U Bulovoj algebri elementi $0$ i $1$ su jedinstveni
+		\item U Bulovoj algebri svaki element $a \in B$ ima jedinstveni komplement $\overline{a}$
+		\item De Morganovi zakoni $(\forall a, b \in B)\; \overline{a \land b} = \overline{a} \lor \overline{v} \quad \overline{a \lor b} = \overline{a} \land \overline{b}$
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	\begin{enumerate}[label = \textbf{\arabic*.)}]
+		\item
+		\item 
+			\begin{align*}
+				&a \lor 1 = 1\\
+				&a \lor 1 = (a \lor 1) &(B_4)\\
+				&= 1 \land (a \lor 1) &(B_1)\\
+				&= (a \lor \overline{a}) \land (a \lor q) &(B_5)\\
+				&= a \lor (\overline{a} \land 1) &(B_3)\\
+				&= a \lor \overline{a} &(B_4)\\
+				&= 1 &(B_5)
+			\end{align*}
+		\item
+		\item
+		\item
+	\end{enumerate} 
+	
+		?????????????????????????????????????????
+\end{proof}
+
+\subsection{Binarna Bulova algebra}
+\subsubsection{Bulovi izrazi u binarnoh Bulovoj algebri}
+	$B=(\{0, 1\}, \lor, \land, \neg)$
+	\begin{definition}
+		U skupu $\{0, 1\}$ definišemo izraz:
+		\begin{align*}
+			x^a = \left\{
+			\begin{aligned}
+				&\overline{x}, \; &a = 0\\
+				&x, \; &a = 1
+			\end{aligned}
+			\right.
+		\end{align*}
+	\end{definition}
+	\begin{definition}
+		Bulovi izrazi su:
+		\begin{enumerate}[label = \arabic*)]
+			\item
+				Bulove konstante $0$, $1$\\
+				Bulove promenljive $x$, $y$, $z$,...
+			\item
+				Ako su $A$ i $V$ Bulovi izrazi, onda su i $A \lor B$, $A \land B$, $\overline{A}$ Bulovi izrazi
+			\item
+				Bulovi izrazi se mogu dobiti konačnim brojem primena tačaka 1) i 2)
+		\end{enumerate}
+	\end{definition}
+	\begin{definition}
+		\textbf{Elementarna konjukcija (EK)} promenljivih $x_1, x_2,\ldots, x_n$ je Bulov izraz oblika:
+		$$x_{i_1}^{\alpha_{i_1}} \land x_{i_2}^{\alpha_{i_2}} \land \ldots \land x_{i_m}^{\alpha_{i_m}}$$
+		gde $\{i_1, i_2, \ldots, i_n\} \subset \{1, 2, \ldots, n\}$ i  $\alpha_{i_1}, \alpha_{i_2}, \ldots, \alpha_{i_m} \in {0,1}$
+	\end{definition}
+	\begin{definition}
+		\textbf{Kanonička elementarna konjukcija (KEK)} promenljivih $x_1, x_2,\ldots, x_n$ je Bulov izraz oblika:
+		$$x_1^{\alpha_1} \land x_2^{\alpha_2} \land \ldots \land x_n^{\alpha_n}$$
+		gde $\alpha_{i_1}, \alpha_{i_2}, \ldots, \alpha_{i_n} \in {0,1}$
+		\textbf{Napomena:} učestvuju sve promenljive.
+	\end{definition}
+	\begin{definition}
+		\textbf{Disjunktivna forma (DF)} je Bulov izraz oblika:
+		$$\mathrm{EK_1} \lor \mathrm{EK_2} \lor \ldots \lor \mathrm{EK_m}$$
+		gde su $\mathrm{EK_1}, \mathrm{EK_2}, \ldots, \mathrm{EK_m}$ elementarne konjukcije. 
+	\end{definition}
+	\begin{definition}
+		\textbf{Savršena disjunktivna normalna forma (SDNF)} u odnosu na promenljive $x_1, x_2,\ldots, x_n$ je Bulov izraz oblika:
+		$$\mathrm{KEK_1} \lor \mathrm{KEK_2} \lor \ldots \lor \mathrm{KEK_m}$$
+		gde su $\mathrm{KEK_1}, \mathrm{KEK_2}, \ldots, \mathrm{KEK_m}$ kanoničke elementarne konjukcije. 
+	\end{definition}
+	
+	\begin{definition}
+		\textbf{Elementarna disjunkcija (ED)} promenljivih $x_1, x_2,\ldots, x_n$ je Bulov izraz oblika:
+		$$x_{i_1}^{\alpha_{i_1}} \lor x_{i_2}^{\alpha_{i_2}} \lor \ldots \lor x_{i_m}^{\alpha_{i_m}}$$
+		gde $\{i_1, i_2, \ldots, i_n\} \subset \{1, 2, \ldots, n\}$ i  $\alpha_{i_1}, \alpha_{i_2}, \ldots, \alpha_{i_m} \in {0,1}$
+	\end{definition}
+	\begin{definition}
+		\textbf{Kanonička elementarna disjunkcija (KED)} promenljivih $x_1, x_2,\ldots, x_n$ je Bulov izraz oblika:
+		$$x_1^{\alpha_1} \lor x_2^{\alpha_2} \lor \ldots \lor x_n^{\alpha_n}$$
+		gde $\alpha_{i_1}, \alpha_{i_2}, \ldots, \alpha_{i_n} \in {0,1}$\\
+		\textbf{Napomena:} učestvuju sve promenljive.
+	\end{definition}
+	\begin{definition}
+		\textbf{Konjuktivna forma (KF)} je Bulov izraz oblika:
+		$$\mathrm{ED_1} \land \mathrm{ED_2} \land \ldots \land \mathrm{ED_m}$$
+		gde su $\mathrm{ED_1}, \mathrm{ED_2}, \ldots, \mathrm{ED_m}$ elementarne disjunkcije. 
+	\end{definition}
+	\begin{definition}
+		\textbf{Savršena konjuktivna normalna forma (SKNF)} u odnosu na promenljive $x_1, x_2,\ldots, x_n$ je Bulov izraz oblika:
+		$$\mathrm{KED_1} \land \mathrm{KED_2} \land \ldots \land \mathrm{KED_m}$$
+		gde su $\mathrm{KED_1}, \mathrm{KED_2}, \ldots, \mathrm{KED_m}$ kanoničke elementarne disjunkcije. 
+	\end{definition}
+	
+\subsection{Bulove funkcije}
+\begin{definition}
+	Preslikavanje $f: \{0, 1\}^n \to \{0, 1\}$ naziva se Bulova funkcija.\\
+	\textbf{Napomena:} Bulove funkcije najčešće se zadaju preko Bulovih izraza ili pomoću zablica.
+\end{definition}
+\begin{theorem}
+	Broj različitih Bulovih funkcija $f: \{0, 1\}^n \to \{0, 1\}$ sa $n$ promenljivih je $2^{2^n}$
+\end{theorem}
+\begin{proof}
+	Broj mesta u koloni jednak je broju redova. Pošto postoji $n$ promenljivih i svaka može da ima neku od vrednosti $0$ ili $1$ broj redova je $2^n$. U svakom redu funkcija može da ima neku od vrednosti $0$ ili $1$, što su dve mogućnosti, pa je ukupan broj funkcija jednak $\underbrace{2\cdot2\cdot2\cdots2}_{2^n} = 2^{2^n}$.
+	\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		$x_1$ & $x_2$ & $\cdots$ & $x_n$ & $f(x_1, x_2, \ldots, x_n)$ \\ \hline
+		$0$ & $0$ & $\cdots$ & $0$ & $y_1$ \\ \hline
+		$0$ & $0$ & $\cdots$ & $1$ & $y_2$ \\ \hline
+		$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ \hline
+		$1$ & $1$ & $\cdots$ & $1$ & $y_{2^n}$ \\ \hline
+	\end{tabular}
+	\end{table}
+\end{proof}
+\begin{theorem}
+	Svaka Bulova funkcija zadata pomoću Bulovog izraza može se izraziti pomoću tablice.
+\end{theorem}
+\begin{theorem}
+	Za svaku Bulovu funkciju, izuzev funkcije koja je identički jednaka nuli važi:
+	$$f(x_1, x_2, \ldots, x_2) = \lor \left[ f(\alpha_1, \alpha_2, \ldots, \alpha_n) \land x_1^{\alpha_1} \land x_2^{\alpha_2} \land \ldots \land x_n^{\alpha_n} \right]$$
+	gde je $\alpha_1, \alpha_2, \ldots, \alpha_n \in {0, 1}$.
+\end{theorem}
+\begin{theorem}Za svaku Bulovu funkciju, izuzev funkcije koja je identički jednaka nuli važi:
+	$$f(x_1, x_2, \ldots, x_2) = \land \left[ f(\alpha_1, \alpha_2, \ldots, \alpha_n) \lor x_1^{\alpha_1} \lor x_2^{\alpha_2} \lor \ldots \lor x_n^{\alpha_n} \right]$$
+	gde je $\alpha_1, \alpha_2, \ldots, \alpha_n \in {0, 1}$.
+\end{theorem}
+
+\subsection{Baze skupa Bulovih funkcija}
+\begin{definition}
+	Skup Bulovih funkcija $\mathbb{F}$ je \textbf{generatorski skup} skupa svih Bulovih funkcija ako se pomoću funkcija iz $\mathbb{F}$ mogu izraziti sve Bulove funkcije.
+\end{definition}
+\begin{example}
+	Skup $\{\land, \lor, \neg\}$ i svaki njegov nadskup su generatorski skupovi
+\end{example}
+\begin{definition}
+	Skup Bulovih funkcija $\mathbb{U}$ je \textbf{baza} skupa svih Bulovih funkcija ako je:
+	\begin{enumerate}[label = \arabic*)]
+		\item $\mathbb{U}$ generatorski skup skupa svih Bulovih funkcija
+		\item Nijedan pravi podskup skupa $\mathbb{U}$ nije generatorski skup
+	\end{enumerate}
+\end{definition}
+\begin{example}
+	Baze skupa svih Bulovih funkcija su:
+	$$\{\lor, \neg\} \quad \{\land, \neg\} \quad \{\Rightarrow, \neg\} \quad \{\downarrow\} \quad \{\uparrow\}$$
+\end{example}
+\begin{proof}
+	Dovoljno je za skup $\{ \downarrow \}$ dokazati da je generatorski skup.
+	\begin{gather*}
+		\overline{x} = x \downarrow y = \overline{x \lor x} = x \downarrow\\
+		x \lor y = \overline{\overline{x \lor y}} = \overline{x \downarrow y} = (x \downarrow y) \downarrow (x \downarrow y)\\
+		x \land y = \overline{\overline{x \land y}} = \overline{\overline{x} \lor \overline{y}} = \overline{x} \downarrow \overline{y} = (x \downarrow x) \downarrow (y \downarrow y)
+	\end{gather*}
+\end{proof}
+\begin{definition}
+	Iskazna formula koja za sve vrednosti iskaznih slova koja se u njoj pojavljuju dobija vrednost $1$ naziba se \textbf{tautologija}.
+\end{definition}
